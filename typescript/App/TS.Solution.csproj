@@ -10,7 +10,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -28,9 +28,10 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
-    <TypeScriptCompile Include="classes.ts" />
-    <TypeScriptCompile Include="functions.ts" />
-    <TypeScriptCompile Include="interfaces.ts" />
+    <TypeScriptCompile Include="Classes\classes.ts" />
+    <TypeScriptCompile Include="Classes\functions.ts" />
+    <TypeScriptCompile Include="Classes\interfaces.ts" />
+    <TypeScriptCompile Include="WebStorage\webstorage.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
