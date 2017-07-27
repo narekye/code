@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.IocContainer.Autofac"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sherp.EntityToPdf", "sherp.EntityToPdf\sherp.EntityToPdf.csproj", "{EB2A620F-1516-4787-9616-3AB82553C124}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.signalr.notifiactions", "sharp.signalr.notifiactions\sharp.signalr.notifiactions.csproj", "{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EB2A620F-1516-4787-9616-3AB82553C124}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB2A620F-1516-4787-9616-3AB82553C124}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB2A620F-1516-4787-9616-3AB82553C124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
