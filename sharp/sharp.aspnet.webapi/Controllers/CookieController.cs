@@ -4,10 +4,12 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Http;
 using sharp.aspnet.webapi.Core;
+using sharp.aspnet.webapi.Filters.Exception;
 using sharp.aspnet.webapi.Models;
 
 namespace sharp.aspnet.webapi.Controllers
 {
+    [ActionException]
     public class CookieController : BaseApiController
     {
         private static string cookieName = "key";
