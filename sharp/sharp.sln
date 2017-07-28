@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.IocContainer.Ninject", "sharp.IocContainer.Ninject\sharp.IocContainer.Ninject.csproj", "{E0613B7E-B948-4EDF-9EF2-81067387C546}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sherp.EntityToPdf", "sherp.EntityToPdf\sherp.EntityToPdf.csproj", "{EB2A620F-1516-4787-9616-3AB82553C124}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.signalr.notifiactions", "sharp.signalr.notifiactions\sharp.signalr.notifiactions.csproj", "{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.aspnet.webapi", "sharp.aspnet.webapi\sharp.aspnet.webapi.csproj", "{67062652-E400-48AC-913D-D7F6815CA3AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67062652-E400-48AC-913D-D7F6815CA3AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67062652-E400-48AC-913D-D7F6815CA3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67062652-E400-48AC-913D-D7F6815CA3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67062652-E400-48AC-913D-D7F6815CA3AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
