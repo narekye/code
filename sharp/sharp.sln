@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.signalr.notifiactions
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.aspnet.webapi", "sharp.aspnet.webapi\sharp.aspnet.webapi.csproj", "{67062652-E400-48AC-913D-D7F6815CA3AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.testing", "sharp.testing\sharp.testing.csproj", "{072FBE90-828A-4819-9719-33901C668B0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{67062652-E400-48AC-913D-D7F6815CA3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67062652-E400-48AC-913D-D7F6815CA3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67062652-E400-48AC-913D-D7F6815CA3AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{072FBE90-828A-4819-9719-33901C668B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072FBE90-828A-4819-9719-33901C668B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072FBE90-828A-4819-9719-33901C668B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{072FBE90-828A-4819-9719-33901C668B0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
