@@ -161,6 +161,7 @@
     <Compile Include="Config\Startup.cs" />
     <Compile Include="Controllers\CookieController.cs" />
     <Compile Include="Core\BaseApiController.cs" />
+    <Compile Include="Filters\Exception\ActionExceptionAttribute.cs" />
     <Compile Include="Models\SuccessModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
