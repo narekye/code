@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http"
+import { Http } from "@angular/http"
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  get() : void {
-    return;
+  constructor(private http: Http) {
+    this.get();
+  }
+  data: any;
+  get(): void {
+    console.log("aaa");
+    this.http.get("http://crmbetd.azurewebsites.net/api/contacts").subscribe(data => console.log(data), error => console.log(error));
   }
   title = 'app';
 }
