@@ -7,13 +7,16 @@ import { Http } from "@angular/http"
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private http: Http) {
+  // fields
+  private connection: Http;
+  constructor(http: Http) {
+    this.connection = http;
     this.get();
   }
   data: any;
   get(): void {
-    console.log("aaa");
-    this.http.get("http://crmbetd.azurewebsites.net/api/contacts").subscribe(data => console.log(data), error => console.log(error));
+    // console.log("aaa");
+    this.connection.get("http://crmbetd.azurewebsites.net/api/contacts").subscribe(data => console.log(data), error => console.log(error));
   }
   title = 'app';
 }
