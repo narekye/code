@@ -13,23 +13,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.signalr.notifiactions
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.aspnet.webapi", "sharp.aspnet.webapi\sharp.aspnet.webapi.csproj", "{67062652-E400-48AC-913D-D7F6815CA3AB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "network", "network", "{FACCE73A-B01C-45F9-AC71-9A8BD0DC4306}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.network.requestSending", "..\..\..\..\Desktop\Network\Request_sending\sharp.network.requestSending.csproj", "{A6DB8641-8A8F-41D8-9F31-FCD2EAFBE76B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.network.webSockets", "..\..\..\..\Desktop\Network\Sockets\sharp.network.webSockets.csproj", "{3165C498-1FC3-4758-B3FE-EE53593C5ECC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IocContainer", "IocContainer", "{F589D778-4F41-4536-BF6C-8F8C34C48BA1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utilities", "utilities", "{D209CFD4-6A72-4E9D-B6D2-735153EB52CE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "asp.net", "asp.net", "{344E1705-2684-4C6E-9EAB-C33C0D6D4732}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.network.ipAddresses", "..\..\..\..\Desktop\Network\IP_addresses\sharp.network.ipAddresses.csproj", "{A2242D89-512C-44D8-81AB-5E51E85DEFFB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "leetcode", "leetcode", "{0C9D90AC-905D-44C0-993E-4FD1E97BAEFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "network", "network", "{9491EA7E-8F39-4622-8986-A41BABAFAC8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.network.clientSockets", "..\..\..\..\Desktop\Network\Client_Side_Sockets\sharp.network.clientSockets.csproj", "{9AD98706-C725-4E05-A6D7-BB7196D202DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.network.httpListener", "..\..\..\..\Desktop\Network\HTTPListener\sharp.network.httpListener.csproj", "{DBEFE788-4682-4226-BD28-0F9F0BCB6D32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.network.clientSockets", "..\..\..\..\Desktop\Network\Client_Side_Sockets\sharp.network.clientSockets.csproj", "{9AD98706-C725-4E05-A6D7-BB7196D202DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.network.ipAddresses", "..\..\..\..\Desktop\Network\IP_addresses\sharp.network.ipAddresses.csproj", "{A2242D89-512C-44D8-81AB-5E51E85DEFFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.network.requestSending", "..\..\..\..\Desktop\Network\Request_sending\sharp.network.requestSending.csproj", "{A6DB8641-8A8F-41D8-9F31-FCD2EAFBE76B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.network.webSockets", "..\..\..\..\Desktop\Network\Sockets\sharp.network.webSockets.csproj", "{3165C498-1FC3-4758-B3FE-EE53593C5ECC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,18 @@ Global
 		{67062652-E400-48AC-913D-D7F6815CA3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67062652-E400-48AC-913D-D7F6815CA3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67062652-E400-48AC-913D-D7F6815CA3AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD98706-C725-4E05-A6D7-BB7196D202DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD98706-C725-4E05-A6D7-BB7196D202DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD98706-C725-4E05-A6D7-BB7196D202DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD98706-C725-4E05-A6D7-BB7196D202DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBEFE788-4682-4226-BD28-0F9F0BCB6D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBEFE788-4682-4226-BD28-0F9F0BCB6D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBEFE788-4682-4226-BD28-0F9F0BCB6D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBEFE788-4682-4226-BD28-0F9F0BCB6D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2242D89-512C-44D8-81AB-5E51E85DEFFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2242D89-512C-44D8-81AB-5E51E85DEFFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2242D89-512C-44D8-81AB-5E51E85DEFFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2242D89-512C-44D8-81AB-5E51E85DEFFB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A6DB8641-8A8F-41D8-9F31-FCD2EAFBE76B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A6DB8641-8A8F-41D8-9F31-FCD2EAFBE76B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6DB8641-8A8F-41D8-9F31-FCD2EAFBE76B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,18 +79,6 @@ Global
 		{3165C498-1FC3-4758-B3FE-EE53593C5ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3165C498-1FC3-4758-B3FE-EE53593C5ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3165C498-1FC3-4758-B3FE-EE53593C5ECC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2242D89-512C-44D8-81AB-5E51E85DEFFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2242D89-512C-44D8-81AB-5E51E85DEFFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2242D89-512C-44D8-81AB-5E51E85DEFFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2242D89-512C-44D8-81AB-5E51E85DEFFB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBEFE788-4682-4226-BD28-0F9F0BCB6D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBEFE788-4682-4226-BD28-0F9F0BCB6D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBEFE788-4682-4226-BD28-0F9F0BCB6D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBEFE788-4682-4226-BD28-0F9F0BCB6D32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9AD98706-C725-4E05-A6D7-BB7196D202DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9AD98706-C725-4E05-A6D7-BB7196D202DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9AD98706-C725-4E05-A6D7-BB7196D202DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9AD98706-C725-4E05-A6D7-BB7196D202DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,10 +89,10 @@ Global
 		{EB2A620F-1516-4787-9616-3AB82553C124} = {D209CFD4-6A72-4E9D-B6D2-735153EB52CE}
 		{98FA0A54-8008-439C-8F2F-3B2497D2D2A7} = {344E1705-2684-4C6E-9EAB-C33C0D6D4732}
 		{67062652-E400-48AC-913D-D7F6815CA3AB} = {344E1705-2684-4C6E-9EAB-C33C0D6D4732}
-		{A6DB8641-8A8F-41D8-9F31-FCD2EAFBE76B} = {FACCE73A-B01C-45F9-AC71-9A8BD0DC4306}
-		{3165C498-1FC3-4758-B3FE-EE53593C5ECC} = {FACCE73A-B01C-45F9-AC71-9A8BD0DC4306}
-		{A2242D89-512C-44D8-81AB-5E51E85DEFFB} = {FACCE73A-B01C-45F9-AC71-9A8BD0DC4306}
-		{DBEFE788-4682-4226-BD28-0F9F0BCB6D32} = {FACCE73A-B01C-45F9-AC71-9A8BD0DC4306}
-		{9AD98706-C725-4E05-A6D7-BB7196D202DB} = {FACCE73A-B01C-45F9-AC71-9A8BD0DC4306}
+		{9AD98706-C725-4E05-A6D7-BB7196D202DB} = {9491EA7E-8F39-4622-8986-A41BABAFAC8A}
+		{DBEFE788-4682-4226-BD28-0F9F0BCB6D32} = {9491EA7E-8F39-4622-8986-A41BABAFAC8A}
+		{A2242D89-512C-44D8-81AB-5E51E85DEFFB} = {9491EA7E-8F39-4622-8986-A41BABAFAC8A}
+		{A6DB8641-8A8F-41D8-9F31-FCD2EAFBE76B} = {9491EA7E-8F39-4622-8986-A41BABAFAC8A}
+		{3165C498-1FC3-4758-B3FE-EE53593C5ECC} = {9491EA7E-8F39-4622-8986-A41BABAFAC8A}
 	EndGlobalSection
 EndGlobal

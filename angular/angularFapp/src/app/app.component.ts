@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http"
+import { HttpClientModule } from "@angular/common/http";
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,8 +8,5 @@ import { HttpClientModule } from "@angular/common/http"
 })
 export class AppComponent {
 
-  get() : void {
-    return;
-  }
   title = 'app';
 }
