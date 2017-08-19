@@ -1,15 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Creational.AbstractFactory.AbstractFactory;
 
 namespace Creational.AbstractFactory
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            var factory = new ConcreteFactory();
+            var client = new Client.Client(factory);
+            client.DoWork();
+            // delay 
+            Console.Read();
         }
     }
 }

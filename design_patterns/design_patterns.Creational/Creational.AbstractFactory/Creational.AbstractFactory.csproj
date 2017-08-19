@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractElement\ConcreteElement.cs" />
+    <Compile Include="AbstractElement\BaseElement.cs" />
+    <Compile Include="AbstractFactory\ConcreteFactory.cs" />
+    <Compile Include="AbstractFactory\FactoryBase.cs" />
+    <Compile Include="Client\Client.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
