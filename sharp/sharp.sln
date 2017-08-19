@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.network.requestSendin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.network.webSockets", "..\..\..\..\Desktop\Network\Sockets\sharp.network.webSockets.csproj", "{3165C498-1FC3-4758-B3FE-EE53593C5ECC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.leetcode.algorithms", "sharp.leetcode.algorithms\sharp.leetcode.algorithms.csproj", "{1B4F44B5-676A-410D-834D-BB3271A40030}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{3165C498-1FC3-4758-B3FE-EE53593C5ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3165C498-1FC3-4758-B3FE-EE53593C5ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3165C498-1FC3-4758-B3FE-EE53593C5ECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B4F44B5-676A-410D-834D-BB3271A40030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B4F44B5-676A-410D-834D-BB3271A40030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B4F44B5-676A-410D-834D-BB3271A40030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B4F44B5-676A-410D-834D-BB3271A40030}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,5 +100,6 @@ Global
 		{A2242D89-512C-44D8-81AB-5E51E85DEFFB} = {9491EA7E-8F39-4622-8986-A41BABAFAC8A}
 		{A6DB8641-8A8F-41D8-9F31-FCD2EAFBE76B} = {9491EA7E-8F39-4622-8986-A41BABAFAC8A}
 		{3165C498-1FC3-4758-B3FE-EE53593C5ECC} = {9491EA7E-8F39-4622-8986-A41BABAFAC8A}
+		{1B4F44B5-676A-410D-834D-BB3271A40030} = {0C9D90AC-905D-44C0-993E-4FD1E97BAEFC}
 	EndGlobalSection
 EndGlobal
