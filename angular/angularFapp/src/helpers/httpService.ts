@@ -9,29 +9,24 @@ export class HttpService {
     private array: Contact[];
     constructor(public http: Http) {
         this._client = http;
+        this.array = new Array<Contact>();
     }
 
     getContacts(): Contact[] {
-        // let array: Array<Contact>;
-        let data = this._client.get(urls.baseUrl + urls.Contacts)
+        this._client.get(urls.baseUrl + urls.Contacts)
             .subscribe(
             (success) => {
                 let json: any = JSON.parse(success["_body"]);
-                let array = new Array<Contact>();
+                // let array = new Array<Contact>();
                 for (let i in json) {
-                    this.array[i] = new Contact(json[i]);
-                    
+                    this.array.push(new Contact(json[i]));
                 }
-                return array;
-                // console.log(this.array);
+                return this.array;
             },
             (error) => {
                 console.log(error);
-                console.log("sorry");
             });
-        console.log(this.array);
-        // return data.unsubscribe;
-        return null;
+        return this.array;
     }
 
 }

@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Http } from "@angular/http";
 import { User } from "./Models/User";
-// import data from '../assets/data.js';
+import { Contact } from "../Models/contact";
 import { HttpService } from "../helpers/httpService";
 @Component({
   selector: 'app-root',
@@ -10,18 +10,22 @@ import { HttpService } from "../helpers/httpService";
   providers: [HttpService]
 })
 export class AppComponent {
-
-
   private service: HttpService;
+  // data: Array<Contact>;
   constructor(service: HttpService) {
     this.service = service;
-    this.get()
   }
   public users: User[] = [new User("a", "b"), new User("c", "d")];
-  get(): void {
-    let t = this.service.getContacts();
-    // console.log(t);
-    
-  }
+  get(): Array<Contact> {
+    let array = this.service.getContacts();
+    // console.log(array);
+    // this.data = array;
+    return array;
+  };
   title = 'app';
+  data : Contact[];
+  ngOnInit() {
+      this.data = this.get();
+      // console.log(this.data);
+  }
 }
