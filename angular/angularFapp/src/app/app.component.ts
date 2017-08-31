@@ -15,17 +15,13 @@ export class AppComponent {
   constructor(service: HttpService) {
     this.service = service;
   }
-  public users: User[] = [new User("a", "b"), new User("c", "d")];
   get(): Array<Contact> {
     let array = this.service.getContacts();
-    // console.log(array);
-    // this.data = array;
     return array;
   };
   title = 'app';
-  data : Contact[];
+  data: Contact[];
   ngOnInit() {
-      this.data = this.get();
-      // console.log(this.data);
+    this.data = this.get();
   }
 }

@@ -16,8 +16,8 @@ export class HttpService {
         this._client.get(urls.baseUrl + urls.Contacts)
             .subscribe(
             (success) => {
+                if (success === undefined || success === null) return;
                 let json: any = JSON.parse(success["_body"]);
-                // let array = new Array<Contact>();
                 for (let i in json) {
                     this.array.push(new Contact(json[i]));
                 }
