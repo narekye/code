@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspectsClient", "src\Utilities\sharo.AspectsClient\AspectsClient.csproj", "{E99ADE54-C321-4798-A2A7-7D920A72CAD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.ScreenCapturer.Job", "utilities\sharp.ScreenCapturer\sharp.ScreenCapturer.Job\sharp.ScreenCapturer.Job.csproj", "{90AAF61E-76AA-43C3-8200-0DFDB98C8252}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.ScreenCapturer.Service", "utilities\sharp.ScreenCapturer\sharp.ScreenCapturer.Service\sharp.ScreenCapturer.Service.csproj", "{D9624587-544B-4383-A295-75E431A32504}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.ScreenCapturer.MailSender", "utilities\sharp.ScreenCapturer\sharp.ScreenCapturer.MailSender\sharp.ScreenCapturer.MailSender.csproj", "{F0A3FDB8-FE18-4FB8-B97C-AA6364C9DA0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{E99ADE54-C321-4798-A2A7-7D920A72CAD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E99ADE54-C321-4798-A2A7-7D920A72CAD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E99ADE54-C321-4798-A2A7-7D920A72CAD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90AAF61E-76AA-43C3-8200-0DFDB98C8252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90AAF61E-76AA-43C3-8200-0DFDB98C8252}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90AAF61E-76AA-43C3-8200-0DFDB98C8252}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90AAF61E-76AA-43C3-8200-0DFDB98C8252}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9624587-544B-4383-A295-75E431A32504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9624587-544B-4383-A295-75E431A32504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9624587-544B-4383-A295-75E431A32504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9624587-544B-4383-A295-75E431A32504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0A3FDB8-FE18-4FB8-B97C-AA6364C9DA0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A3FDB8-FE18-4FB8-B97C-AA6364C9DA0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A3FDB8-FE18-4FB8-B97C-AA6364C9DA0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0A3FDB8-FE18-4FB8-B97C-AA6364C9DA0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
