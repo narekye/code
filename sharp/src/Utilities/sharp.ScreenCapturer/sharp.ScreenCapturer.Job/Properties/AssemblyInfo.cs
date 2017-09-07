@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("sharp.ScreenCapturer.MailSender")]
+[assembly: AssemblyTitle("sharp.ScreenCapturer.Job")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("sharp.ScreenCapturer.MailSender")]
+[assembly: AssemblyProduct("sharp.ScreenCapturer.Job")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b0e25287-f683-4bd9-a0ff-21edbc1e0e2b")]
+[assembly: Guid("d6e8af13-a2ee-4345-88f3-2cb284935ea1")]
 
 // Version information for an assembly consists of the following four values:
 //

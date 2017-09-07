@@ -10,7 +10,6 @@ namespace sharp.ScreenCapturer.Service
             {
                 new CapturerService()
             };
-
             ServiceBase.Run(ServicesToRun);
         }
     }
