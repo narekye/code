@@ -43,6 +43,14 @@
   <ItemGroup>
     <Compile Include="ScreenCapturer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenShootSaver.cs" />
+    <Compile Include="Worker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\sharp.ScreenCapturer.MailSender\sharp.ScreenCapturer.MailSender.csproj">
+      <Project>{0bcf483e-d74c-433a-936a-a0469f23c329}</Project>
+      <Name>sharp.ScreenCapturer.MailSender</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

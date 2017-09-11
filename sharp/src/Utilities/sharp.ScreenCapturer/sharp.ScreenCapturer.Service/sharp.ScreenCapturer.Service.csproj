@@ -56,6 +56,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\sharp.ScreenCapturer.Job\sharp.ScreenCapturer.Job.csproj">
+      <Project>{d6e8af13-a2ee-4345-88f3-2cb284935ea1}</Project>
+      <Name>sharp.ScreenCapturer.Job</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sharp.ScreenCapturer.MailSender\sharp.ScreenCapturer.MailSender.csproj">
+      <Project>{0bcf483e-d74c-433a-936a-a0469f23c329}</Project>
+      <Name>sharp.ScreenCapturer.MailSender</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
