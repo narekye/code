@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using sharp.Extensions.Constants;
+using System.Net;
+using System.Text.RegularExpressions;
 
 namespace sharp.Extensions.String
 {
@@ -6,13 +8,37 @@ namespace sharp.Extensions.String
     {
         public static bool IsValidEmailAddress(this string s)
         {
-            Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+            Regex regex = new Regex(Regexes.IsValidEmailAddressRegex);
             return regex.IsMatch(s);
         }
+
         public static bool IsValidUrl(this string text)
         {
-            Regex rx = new Regex(@"http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?");
+            Regex rx = new Regex(Regexes.IsValidUrlRegex);
             return rx.IsMatch(text);
+        }
+
+        public static string RemoveSpaces(this string s)
+        {
+            return s.Replace(" ", string.Empty);
+        }
+
+        public static bool UrlAvailable(this string httpUrl)
+        {
+            if (!httpUrl.StartsWith(HttpConstants.Http) || !httpUrl.StartsWith(HttpConstants.Https))
+                httpUrl = HttpConstants.Http + httpUrl;
+            try
+            {
+                HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(httpUrl);
+                myRequest.Method = HttpConstants.GetMethod;
+                myRequest.ContentType = ContentTypes.XFormUrlEncoded;
+                HttpWebResponse myHttpWebResponse = (HttpWebResponse)myRequest.GetResponse();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

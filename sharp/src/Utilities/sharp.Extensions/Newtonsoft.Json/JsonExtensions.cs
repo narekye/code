@@ -6,8 +6,6 @@ namespace sharp.Extensions.Newtonsoft.Json
 {
     public static class JsonExtensions
     {
-        public static object ExpressionHelper { get; private set; }
-
         public static string ToJson<T>(this T obj, bool includeNull = false)
         {
             var settings = new JsonSerializerSettings
