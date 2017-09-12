@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.ScreenCapturer.Job", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.ScreenCapturer.Service", "src\Utilities\sharp.ScreenCapturer\sharp.ScreenCapturer.Service\sharp.ScreenCapturer.Service.csproj", "{D84A6CC5-393B-4521-863F-08BF2D718840}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.Extensions", "src\Utilities\sharp.Extensions\sharp.Extensions.csproj", "{AA32D486-437D-43E4-BD99-5B00C3DBF8C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D84A6CC5-393B-4521-863F-08BF2D718840}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D84A6CC5-393B-4521-863F-08BF2D718840}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D84A6CC5-393B-4521-863F-08BF2D718840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA32D486-437D-43E4-BD99-5B00C3DBF8C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA32D486-437D-43E4-BD99-5B00C3DBF8C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA32D486-437D-43E4-BD99-5B00C3DBF8C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA32D486-437D-43E4-BD99-5B00C3DBF8C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
