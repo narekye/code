@@ -6,7 +6,7 @@ namespace sharp.mongoDb.Console
     {
         private static string connectionString = "mongodb://localhost:27017"; // this can be stored in app.config file as conn string
 
-        static void Main(string[] args)
+        static void Main()
         {
             MongoClient client = new MongoClient(connectionString);
             IMongoDatabase db = client.GetDatabase("test");
