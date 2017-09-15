@@ -45,8 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Checkings\CheckingExtensions.cs" />
+    <Compile Include="Common\Common.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="DateTime\DateTimeExtensions.cs" />
+    <Compile Include="Exceptions\ExceptionExtensions.cs" />
     <Compile Include="ExportFiles\ExportToFileExtensions.cs" />
     <Compile Include="Newtonsoft.Json\JsonExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
