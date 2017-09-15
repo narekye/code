@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.aspnet.webapi", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.signalr.notifiactions", "src\Web\sharp.signalr.notifiactions\sharp.signalr.notifiactions.csproj", "{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.Extensions.Client", "src\Utilities\sharp.Extensions.Client\sharp.Extensions.Client.csproj", "{177D6526-3A5E-4CEA-BA30-DCE580038F97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98FA0A54-8008-439C-8F2F-3B2497D2D2A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{177D6526-3A5E-4CEA-BA30-DCE580038F97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{177D6526-3A5E-4CEA-BA30-DCE580038F97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{177D6526-3A5E-4CEA-BA30-DCE580038F97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{177D6526-3A5E-4CEA-BA30-DCE580038F97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
