@@ -1,5 +1,6 @@
 ﻿using sharp.Extensions.QR;
 using System;
+using System.Threading;
 
 namespace sharp.Extensions.Client
 {
@@ -7,8 +8,9 @@ namespace sharp.Extensions.Client
     {
         static void Main()
         {
-            QrCode.GenerateBarCode("Some text", 500, 500);
-            Console.Read();
+            QrCode.GenerateBarCode("otpauth://totp/UserName?secret=secret&issuer=issuer");
+            Console.WriteLine("Completed !");
+            Thread.Sleep(2500);
         }
     }
 }
