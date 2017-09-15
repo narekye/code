@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Creational.Prototype
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            IEmployee obj = new Employee();
+            obj.AddData();
+            var next = obj.Clone();
+            Console.WriteLine(obj == next);
         }
     }
 }
