@@ -6,7 +6,7 @@ namespace sharp.Extensions.Xml
 {
     public static class XmlExtensions
     {
-        public static string XmlSerialize<T>(this T obj) where T : class, new()
+        public static string XmlSerialize<T>(this T obj) where T : class
         {
             if (obj == null) throw new ArgumentNullException($"The argument {nameof(obj)} cannot be null");
 
@@ -18,7 +18,7 @@ namespace sharp.Extensions.Xml
             }
         }
 
-        public static T XmlDeserializeOrDefault<T>(this string xml) where T : class, new()
+        public static T XmlDeserializeOrDefault<T>(this string xml) where T : class
         {
             if (xml == null) throw new ArgumentNullException($"The argument {nameof(xml)} cannot be null");
 

@@ -6,7 +6,8 @@ namespace sharp.Extensions.Client
 {
     class Program
     {
-        static void Main()
+        [STAThread]
+        private static void Main()
         {
             QrCode.GenerateBarCode("otpauth://totp/UserName?secret=secret&issuer=issuer");
             Console.WriteLine("Completed !");
