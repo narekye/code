@@ -14,7 +14,9 @@ namespace sharp.webApiSession.Middlewares
 
         public override async Task Invoke(IOwinContext context)
         {
-            var token = context.Request.Headers[""];
+            var k = context.Request.Host;
+            // context.Response.Write("Writes a text");
+            var token = context.Request.Headers[string.Empty];
             var model = new SessionModel
             {
                 Token = token
