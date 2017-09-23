@@ -1,7 +1,7 @@
 ﻿Install-Package Ninject.Web.WebApi 
 For additional info click this [link](http://nodogmablog.bryanhogan.net/2016/04/web-api-2-and-ninject-how-to-make-them-work-together/)
 ## NOTE this will install 
-`Ninject` and `Ninject.Web.Common` package.
+**Ninject** and **Ninject.Web.Common** package.
 
 After all need to install this.
 
@@ -15,16 +15,16 @@ Register some services.
 
 Example.
 
-`c#
+```c#
 private static void RegisterServices(IKernel kernel)
 {
     kernel.Bind<ICaclulator>().To<Caclulator>();
 }
-`
+```
 
 
 And finnaly use it all.
-`c#
+```c#
 public class ValuesController : ApiController
 {
     private readonly ICaclulator _caclulator;
@@ -38,9 +38,9 @@ public class ValuesController : ApiController
         return _caclulator.Add(num1, num2);
     }
 }
-`
+```
 Dont forget about ` HttpConfiguration ` in Owin startup class.
-`c# 
+```c# 
 private void ConfigureWebApi(HttpConfiguration config)
 {
      config.DependencyResolver = new NinjectDependencyResolver(new Bootstrapper().Kernel);
@@ -51,4 +51,4 @@ private void ConfigureWebApi(HttpConfiguration config)
           defaults: new { action = RouteParameter.Optional }
       );
 }
-`
+```
