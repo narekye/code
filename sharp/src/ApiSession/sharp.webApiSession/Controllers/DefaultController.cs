@@ -1,4 +1,4 @@
-﻿using sharp.webApiSession.BLL;
+﻿using sharp.webApiSession.BLL.Repository;
 using sharp.webApiSession.Controllers.Core;
 using System.Web.Http;
 
@@ -7,16 +7,17 @@ namespace sharp.webApiSession.Controllers
 
     public class DefaultController : BaseApiController
     {
-        private readonly ICalculator _calculator;
-        public DefaultController(ICalculator calculator)
+
+        public DefaultController(IAdminRepository repository)
         {
-            _calculator = calculator;
+            this.AdminRepository = repository;
         }
 
 
         public IHttpActionResult Get()
         {
-            return Ok(_calculator.Add(3, 3));
+            var result = AdminRepository.DoWork();
+            return Ok(result);
         }
     }
 }

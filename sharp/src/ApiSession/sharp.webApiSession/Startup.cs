@@ -2,6 +2,7 @@
 using Ninject.Web.Common;
 using Ninject.Web.WebApi;
 using Owin;
+using sharp.webApiSession.Middlewares;
 using System.Web.Http;
 
 [assembly: OwinStartup(typeof(sharp.webApiSession.Startup))]
@@ -12,6 +13,7 @@ namespace sharp.webApiSession
     {
         public void Configuration(IAppBuilder app)
         {
+            app.Use<SessionMiddleware>();
             app.UseWelcomePage("/");
             var config = new HttpConfiguration();
             ConfigureWebApi(config);
