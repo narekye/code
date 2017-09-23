@@ -15,7 +15,7 @@ Register some services.
 
 Example.
 
-`C#
+`c#
 private static void RegisterServices(IKernel kernel)
 {
     kernel.Bind<ICaclulator>().To<Caclulator>();
@@ -24,7 +24,7 @@ private static void RegisterServices(IKernel kernel)
 
 
 And finnaly use it all.
-`C#
+`c#
 public class ValuesController : ApiController
 {
     private readonly ICaclulator _caclulator;
@@ -40,7 +40,7 @@ public class ValuesController : ApiController
 }
 `
 Dont forget about ` HttpConfiguration ` in Owin startup class.
-`C# 
+`c# 
 private void ConfigureWebApi(HttpConfiguration config)
 {
      config.DependencyResolver = new NinjectDependencyResolver(new Bootstrapper().Kernel);
