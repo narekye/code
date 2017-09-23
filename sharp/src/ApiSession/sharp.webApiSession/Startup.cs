@@ -1,7 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Owin;
+using System.Web.Http;
 
 [assembly: OwinStartup(typeof(sharp.webApiSession.Startup))]
 
@@ -12,7 +11,19 @@ namespace sharp.webApiSession
         public void Configuration(IAppBuilder app)
         {
             app.UseWelcomePage("/");
-            // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=316888
+            var config = new HttpConfiguration();
+            ConfigureWebApi(config);
+            app.UseWebApi(config);
+        }
+
+        private void ConfigureWebApi(HttpConfiguration config)
+        {
+            config.MapHttpAttributeRoutes();
+            config.Routes.MapHttpRoute(
+               name: "default",
+               routeTemplate: "api/{controller}/{action}",
+               defaults: new { action = RouteParameter.Optional }
+            );
         }
     }
 }

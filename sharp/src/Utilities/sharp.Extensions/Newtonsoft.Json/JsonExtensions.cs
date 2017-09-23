@@ -16,5 +16,18 @@ namespace sharp.Extensions.Newtonsoft.Json
             };
             return JsonConvert.SerializeObject(obj, settings);
         }
+
+        public static T FromJson<T>(this string obj, bool include = false)
+        {
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                Converters = new JsonConverter[] { new StringEnumConverter() },
+                NullValueHandling = include ? NullValueHandling.Include : NullValueHandling.Ignore
+            };
+
+            return JsonConvert.DeserializeObject<T>(obj, settings);
+        }
+
     }
 }
