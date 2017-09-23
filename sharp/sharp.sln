@@ -35,9 +35,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.Extensions.Client", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.IocContainer.Console", "src\Dependency Injection\sharp.IocContainer.Autofac\sharp.IocContainer.Console\sharp.IocContainer.Console.csproj", "{070BEBA8-B8A2-4E4F-AFE8-03DFFEC89080}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.webapiSession", "src\ApiSession\sharp.webapiSession\sharp.webapiSession.csproj", "{EA03FA19-0054-49C6-9698-F352B1FAB6F6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.webapiSession.Resources", "src\ApiSession\sharp.webapiSession.Resources\sharp.webapiSession.Resources.csproj", "{C372F722-8665-4931-B206-02813C54B274}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.webApiSession", "src\ApiSession\sharp.webApiSession\sharp.webApiSession.csproj", "{17B43977-489F-4817-9116-05189DAF0482}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.webApiSession.Tests", "sharp.webApiSession.Tests\sharp.webApiSession.Tests.csproj", "{DBA3A614-94D3-48A5-B49F-4D6E681C1562}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,14 +111,18 @@ Global
 		{070BEBA8-B8A2-4E4F-AFE8-03DFFEC89080}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{070BEBA8-B8A2-4E4F-AFE8-03DFFEC89080}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{070BEBA8-B8A2-4E4F-AFE8-03DFFEC89080}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EA03FA19-0054-49C6-9698-F352B1FAB6F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA03FA19-0054-49C6-9698-F352B1FAB6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA03FA19-0054-49C6-9698-F352B1FAB6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA03FA19-0054-49C6-9698-F352B1FAB6F6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C372F722-8665-4931-B206-02813C54B274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C372F722-8665-4931-B206-02813C54B274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C372F722-8665-4931-B206-02813C54B274}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C372F722-8665-4931-B206-02813C54B274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17B43977-489F-4817-9116-05189DAF0482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B43977-489F-4817-9116-05189DAF0482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B43977-489F-4817-9116-05189DAF0482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B43977-489F-4817-9116-05189DAF0482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBA3A614-94D3-48A5-B49F-4D6E681C1562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBA3A614-94D3-48A5-B49F-4D6E681C1562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBA3A614-94D3-48A5-B49F-4D6E681C1562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBA3A614-94D3-48A5-B49F-4D6E681C1562}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
