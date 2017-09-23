@@ -1,5 +1,8 @@
 ﻿using Microsoft.Owin;
+using Ninject.Web.Common;
+using Ninject.Web.WebApi;
 using Owin;
+using sharp.webApiSession.App_Start;
 using System.Web.Http;
 
 [assembly: OwinStartup(typeof(sharp.webApiSession.Startup))]
@@ -10,6 +13,7 @@ namespace sharp.webApiSession
     {
         public void Configuration(IAppBuilder app)
         {
+            //NinjectWebCommon.Start();
             app.UseWelcomePage("/");
             var config = new HttpConfiguration();
             ConfigureWebApi(config);
@@ -18,6 +22,7 @@ namespace sharp.webApiSession
 
         private void ConfigureWebApi(HttpConfiguration config)
         {
+            config.DependencyResolver = new NinjectDependencyResolver(new Bootstrapper().Kernel);
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                name: "default",
