@@ -1,4 +1,5 @@
 using sharp.webApiSession.BLL;
+using sharp.webApiSession.BLL.Repository;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(sharp.webApiSession.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(sharp.webApiSession.App_Start.NinjectWebCommon), "Stop")]
@@ -62,6 +63,7 @@ namespace sharp.webApiSession.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ICalculator>().To<Calculator>();
+            kernel.Bind<IAdminRepository>().To<AdminRepository>();
         }
     }
 }
