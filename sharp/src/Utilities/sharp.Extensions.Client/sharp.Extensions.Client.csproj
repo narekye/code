@@ -88,7 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\sharp.Extensions\sharp.Extensions.csproj">
-      <Project>{aa32d486-437d-43e4-bd99-5b00c3dbf8c6}</Project>
+      <Project>{AA32D486-437D-43E4-BD99-5B00C3DBF8C6}</Project>
       <Name>sharp.Extensions</Name>
     </ProjectReference>
   </ItemGroup>

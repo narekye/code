@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.webApiSession", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.webApiSession.BLL", "src\ApiSession\sharp.webApiSession.BLL\sharp.webApiSession.BLL.csproj", "{384C5018-C87D-4AA4-AD9D-DA0B88F0BA5C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Architecture", "Architecture", "{7C8C423E-24D9-46CF-B271-1B1E81E90DD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
