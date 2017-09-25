@@ -2,8 +2,10 @@
 using Ninject.Web.Common;
 using Ninject.Web.WebApi;
 using Owin;
+using sharp.webApiSession.Handlers;
 using sharp.webApiSession.Middlewares;
 using System.Web.Http;
+using System.Web.Routing;
 
 [assembly: OwinStartup(typeof(sharp.webApiSession.Startup))]
 
@@ -29,6 +31,10 @@ namespace sharp.webApiSession
                routeTemplate: "api/{controller}/{action}",
                defaults: new { action = RouteParameter.Optional }
             );
+            RouteTable.Routes.MapHttpRoute(
+                name: "default",
+                routeTemplate: "api/{controller}/{action}",
+                defaults: new { action = RouteParameter.Optional }).RouteHandler = new SessionStateRouteHandler();
         }
     }
 }
