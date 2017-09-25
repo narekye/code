@@ -1,17 +1,17 @@
+using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+using Ninject;
+using Ninject.Web.Common;
+using sharp.webApiSession;
 using sharp.webApiSession.BLL;
 using sharp.webApiSession.BLL.Repository;
+using System;
+using System.Web;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(sharp.webApiSession.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(sharp.webApiSession.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(NinjectWebCommon), "Stop")]
 
-namespace sharp.webApiSession.App_Start
+namespace sharp.webApiSession
 {
-    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-    using Ninject;
-    using Ninject.Web.Common;
-    using System;
-    using System.Web;
-
     public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();

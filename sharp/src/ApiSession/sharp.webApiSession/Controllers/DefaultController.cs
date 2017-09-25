@@ -7,14 +7,10 @@ namespace sharp.webApiSession.Controllers
 
     public class DefaultController : BaseApiController
     {
+        public DefaultController(IAdminRepository repository) : base(repository) { }
 
-        public DefaultController(IAdminRepository repository)
-        {
-            this.AdminRepository = repository;
-        }
-
-
-        public IHttpActionResult Get()
+        [HttpGet]
+        public IHttpActionResult DoWork()
         {
             var result = AdminRepository.DoWork();
             return Ok(result);
