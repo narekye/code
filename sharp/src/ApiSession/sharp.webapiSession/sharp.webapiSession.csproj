@@ -163,6 +163,8 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\Core\BaseApiController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Handlers\SessionableControllerHandler.cs" />
+    <Compile Include="Handlers\SessionStateRouteHandler.cs" />
     <Compile Include="Middlewares\SessionMiddleware.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
