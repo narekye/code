@@ -6,7 +6,7 @@ namespace sharp.Extra.Quartz.NET.Controllers
     {
         public IHttpActionResult Get()
         {
-            return Ok(new[] { "val1", "val2" });
+            return NotFound();
         }
     }
 }
