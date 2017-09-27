@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.webApiSession", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.webApiSession.BLL", "src\ApiSession\sharp.webApiSession.BLL\sharp.webApiSession.BLL.csproj", "{384C5018-C87D-4AA4-AD9D-DA0B88F0BA5C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Architecture", "Architecture", "{7C8C423E-24D9-46CF-B271-1B1E81E90DD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.Extra.Quartz.NET", "src\Extra\sharp.Extra.Quartz.NET\sharp.Extra.Quartz.NET.csproj", "{28863942-1889-4377-AC8B-E043C909F0FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +119,10 @@ Global
 		{384C5018-C87D-4AA4-AD9D-DA0B88F0BA5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{384C5018-C87D-4AA4-AD9D-DA0B88F0BA5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{384C5018-C87D-4AA4-AD9D-DA0B88F0BA5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28863942-1889-4377-AC8B-E043C909F0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28863942-1889-4377-AC8B-E043C909F0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28863942-1889-4377-AC8B-E043C909F0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28863942-1889-4377-AC8B-E043C909F0FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
