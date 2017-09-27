@@ -16,7 +16,7 @@ namespace sharp.Extra.Quartz.NET.Jobs
                 .WithIdentity("trigger1", "group1")     // identify trigger with group
                 .StartNow()                            // starts the trigger
                 .WithSimpleSchedule(x => x
-                    .WithIntervalInMinutes(1)          // after 1 minute
+                    .WithIntervalInSeconds(60)          // after 60 seconds
                     .RepeatForever())                   // forerver repeat
                 .Build();                               // build trigger
 
