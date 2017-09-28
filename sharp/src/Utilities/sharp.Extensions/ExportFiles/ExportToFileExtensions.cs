@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
+using sharp.Extensions.Checkings;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using iTextSharp.text;
-using sharp.Extensions.Checkings;
 
 namespace sharp.Extensions.ExportFiles
 {
