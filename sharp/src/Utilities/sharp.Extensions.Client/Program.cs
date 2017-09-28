@@ -1,7 +1,5 @@
-﻿using sharp.Extensions.QR;
+﻿using sharp.Extensions.ExportFiles;
 using System;
-using System.Threading;
-using sharp.Extensions.ExportFiles;
 
 namespace sharp.Extensions.Client
 {
@@ -16,9 +14,7 @@ namespace sharp.Extensions.Client
 
             PlayersEntities context = new PlayersEntities();
 
-            context.Players.ToPdfTable();
-
-
+            context.Players.ToPdfFile();
         }
     }
 }

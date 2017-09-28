@@ -18,7 +18,7 @@ namespace sharp.Extensions.ExportFiles
         public static void ToXlxs<T>(this T @object) { }
         public static void ToXlxs<T>(this IEnumerable<T> source) { }
 
-        public static void ToPdfTable<T>(this DbSet<T> source, string path = null) where T : class, new()
+        public static void ToPdfFile<T>(this DbSet<T> source, string path = null) where T : class, new()
         {
             Document document = new Document();
             if (string.IsNullOrWhiteSpace(path))
