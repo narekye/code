@@ -9,7 +9,7 @@ namespace sharp.Extensions.Checkings
             if (obj == null) throw new ArgumentNullException("Not allowed to be null");
         }
 
-        private static bool IsNull<T>(this T obj) where T : class
+        public static bool IsNull<T>(this T obj) where T : class
         {
             return ReferenceEquals(obj, null);
         }

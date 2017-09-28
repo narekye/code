@@ -7,7 +7,7 @@ namespace sharp.webApiSession.Controllers.Core
     public class BaseApiController : ApiController
     {
         [Inject]
-        public IAdminRepository AdminRepository { get; }
+        public virtual IAdminRepository AdminRepository { get; }
         public BaseApiController(IAdminRepository repository)
         {
             AdminRepository = repository;
