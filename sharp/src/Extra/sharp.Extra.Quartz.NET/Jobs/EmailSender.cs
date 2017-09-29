@@ -6,8 +6,8 @@ namespace sharp.Extra.Quartz.NET.Jobs
 {
     public class EmailSender : IJob
     {
-        private static MailAddress fromAddress = new MailAddress("fromaddress@gmail.com", "Its a job");
-        private static MailAddress toAddress = new MailAddress("toaddress@gmail.com", "To me");
+        private static MailAddress fromAddress = new MailAddress("from@gmail.com", "Its a job");
+        private static MailAddress toAddress = new MailAddress("to@gmail.com", "To me");
         private const string password = "password";
         private const string subject = "Subject";
         private const string body = "<h1>Hello from job</h1>";

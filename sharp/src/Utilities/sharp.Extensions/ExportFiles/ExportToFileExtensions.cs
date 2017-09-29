@@ -25,38 +25,28 @@ namespace sharp.Extensions.ExportFiles
             {
                 path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             }
-
             path += $"\\{System.DateTime.Now.ToShortDateString().Replace('/', '-')}_table.pdf";
             PdfWriter.GetInstance(document, new FileStream(path, FileMode.Create));
-
             document.Open();
-
             BaseFont baseFont = BaseFont.CreateFont(@"C:\Windows\Fonts\arial.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
             Font font = new Font(baseFont, Font.DEFAULTSIZE);
-
             var propertyInfoArray = typeof(T).GetProperties().ToList();
             var properties = propertyInfoArray.Select(x => x.Name).ToList();
-
             if (properties == null)
                 throw new Exception("Properties count is 0.");
-
             PdfPTable table = new PdfPTable(properties.Count);
             PdfPCell cell = new PdfPCell(new Phrase($"Database table writed at - {System.DateTime.Now.Date}", font));
-
             cell.Colspan = properties.Count;
             cell.HorizontalAlignment = 1;
             cell.Border = 0;
             table.AddCell(cell);
-
             foreach (string item in properties)
             {
                 cell = new PdfPCell(new Phrase(item, font));
                 cell.BackgroundColor = BaseColor.GREEN;
                 table.AddCell(cell);
             }
-
             var listOfObjects = source.ToList();
-
             foreach (var item in listOfObjects)
             {
                 foreach (PropertyInfo propertyInfo in propertyInfoArray)

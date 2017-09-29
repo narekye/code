@@ -1,4 +1,5 @@
-﻿using sharp.Extensions.ExportFiles;
+﻿using sharp.Extensions.Checkings;
+using sharp.Extensions.ExportFiles;
 using System;
 
 namespace sharp.Extensions.Client
@@ -13,7 +14,8 @@ namespace sharp.Extensions.Client
             // Thread.Sleep(2500);
 
             PlayersEntities context = new PlayersEntities();
-
+            string s = null;
+            s.ThrowIfArgumentIsNull();
             context.Players.ToPdfFile();
         }
     }
