@@ -1,9 +1,14 @@
 ﻿using sharp.Extensions.ExportFiles;
+using sharp.Extensions.Xml;
 using System;
 using System.Diagnostics;
 
 namespace sharp.Extensions.Client
 {
+    public class FF
+    {
+        public int I { get; set; }
+    }
     class Program
     {
         [STAThread]
@@ -17,7 +22,12 @@ namespace sharp.Extensions.Client
             Console.WriteLine(watch.Elapsed);
             Console.Read();
 
+            Console.WriteLine(new string('-', 30));
+            var k = new FF() { I = 4 }.XmlSerialize();
+            Console.WriteLine(k);
         }
+
+
     }
 }
 

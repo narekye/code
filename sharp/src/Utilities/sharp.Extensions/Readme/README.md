@@ -34,4 +34,4 @@ After editing run this command.
 
 This creates a NuGet package file like libName.1.0.0.0.nupkg using the package name and version number from the .nuspec file.
 
-And publish the package to [NuGet](NuGet.org)
+And publish the package to [NuGet](https://www.NuGet.org)
