@@ -7,7 +7,7 @@ After all open any text editor to edit your settings in `.nuspec` file.
 
 The file content will look like follows.
 
-`xml
+```xml
 <?xml version="1.0"?>
 <package>
     <metadata>
@@ -26,7 +26,7 @@ The file content will look like follows.
     <tags>Tag1 Tag2</tags>
     </metadata>
 </package>
-`
+```
 
 After editing run this command.
 
