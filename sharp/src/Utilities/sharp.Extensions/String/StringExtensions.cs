@@ -30,7 +30,7 @@ namespace sharp.Extensions.String
             try
             {
                 HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(httpUrl);
-                myRequest.Method = HttpConstants.GetMethod;
+                myRequest.Method = HttpConstants.GET;
                 myRequest.ContentType = ContentTypes.XFormUrlEncoded;
                 HttpWebResponse myHttpWebResponse = (HttpWebResponse)myRequest.GetResponse();
                 return true;

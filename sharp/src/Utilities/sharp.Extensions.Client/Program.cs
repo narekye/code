@@ -1,6 +1,6 @@
-﻿using sharp.Extensions.Checkings;
-using sharp.Extensions.ExportFiles;
+﻿using sharp.Extensions.ExportFiles;
 using System;
+using System.Diagnostics;
 
 namespace sharp.Extensions.Client
 {
@@ -9,14 +9,14 @@ namespace sharp.Extensions.Client
         [STAThread]
         private static void Main()
         {
-            //QrCode.GenerateBarCode("otpauth://totp/UserName?secret=secret&issuer=issuer");
-            Console.WriteLine("Completed !");
-            // Thread.Sleep(2500);
+            var obj = new { Name = "alice", Age = 148, Country = "uae" };
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+            obj.ToCsv().GetAwaiter().GetResult();
+            watch.Stop();
+            Console.WriteLine(watch.Elapsed);
+            Console.Read();
 
-            PlayersEntities context = new PlayersEntities();
-            string s = null;
-            s.ThrowIfArgumentIsNull();
-            context.Players.ToPdfFile();
         }
     }
 }

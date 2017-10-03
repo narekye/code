@@ -10,12 +10,19 @@
     {
         public const string Http = "http://";
         public const string Https = "https://";
-        public const string GetMethod = "GET";
+        public const string GET = "GET";
+        public const string POST = "POST";
+        public const string PUT = "PUT";
     }
 
     public static class Regexes
     {
         public const string IsValidUrlRegex = @"http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?";
         public const string IsValidEmailAddressRegex = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
+    }
+
+    public static class Exceptions
+    {
+        public const string ArgumentCannotBeNull = "Argument cannot be null";
     }
 }
