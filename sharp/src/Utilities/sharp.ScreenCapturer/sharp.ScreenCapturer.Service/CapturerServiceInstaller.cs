@@ -4,19 +4,19 @@ using System.ServiceProcess;
 namespace sharp.ScreenCapturer.Service
 {
     [RunInstaller(true)]
-    public partial class ServiceInstaller : System.Configuration.Install.Installer
+    public partial class CapturerServiceInstaller : System.Configuration.Install.Installer
     {
-        ServiceInstaller serviceInstaller;
+        ServiceInstaller _capturerServiceInstaller;
         ServiceProcessInstaller processInstaller;
-        public ServiceInstaller()
+        public CapturerServiceInstaller()
         {
             InitializeComponent();
             processInstaller = new ServiceProcessInstaller();
             processInstaller.Account = ServiceAccount.LocalSystem;
-            serviceInstaller.StartType = ServiceStartMode.Manual;
-            serviceInstaller.ServiceName = "Service1";
+            _capturerServiceInstaller.StartType = ServiceStartMode.Manual;
+            _capturerServiceInstaller.ServiceName = "Service1";
             Installers.Add(processInstaller);
-            Installers.Add(serviceInstaller);
+            Installers.Add(_capturerServiceInstaller);
         }
     }
 }

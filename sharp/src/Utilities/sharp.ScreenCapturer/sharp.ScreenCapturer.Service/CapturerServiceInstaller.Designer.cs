@@ -1,6 +1,6 @@
 ﻿namespace sharp.ScreenCapturer.Service
 {
-    partial class ServiceInstaller
+    partial class CapturerServiceInstaller
     {
         /// <summary>
         /// Required designer variable.

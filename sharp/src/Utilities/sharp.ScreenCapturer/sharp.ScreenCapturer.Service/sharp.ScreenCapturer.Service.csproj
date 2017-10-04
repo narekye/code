@@ -54,11 +54,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceInstaller.cs">
+    <Compile Include="CapturerServiceInstaller.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ServiceInstaller.Designer.cs">
-      <DependentUpon>ServiceInstaller.cs</DependentUpon>
+    <Compile Include="CapturerServiceInstaller.Designer.cs">
+      <DependentUpon>CapturerServiceInstaller.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
