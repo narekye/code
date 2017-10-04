@@ -43,6 +43,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.Extra.Quartz.NET", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.Selenium.Test.Demo", "src\Extra\sharp.Selenium.Test.Demo\sharp.Selenium.Test.Demo.csproj", "{3FA94EBB-7CD6-41AC-A47E-A67863AB863D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.AuthorizationServer.Api", "src\OAuth2\sharp.AuthorizationServer.Api\sharp.AuthorizationServer.Api.csproj", "{AF4247B3-A6CD-4980-910C-4490442A7E29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.ResourceServer.Api", "src\OAuth2\sharp.ResourceServer.Api\sharp.ResourceServer.Api.csproj", "{99F1BE00-B2CC-4BB8-B273-3EE041928AD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +133,14 @@ Global
 		{3FA94EBB-7CD6-41AC-A47E-A67863AB863D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FA94EBB-7CD6-41AC-A47E-A67863AB863D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FA94EBB-7CD6-41AC-A47E-A67863AB863D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF4247B3-A6CD-4980-910C-4490442A7E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF4247B3-A6CD-4980-910C-4490442A7E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF4247B3-A6CD-4980-910C-4490442A7E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF4247B3-A6CD-4980-910C-4490442A7E29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F1BE00-B2CC-4BB8-B273-3EE041928AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F1BE00-B2CC-4BB8-B273-3EE041928AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F1BE00-B2CC-4BB8-B273-3EE041928AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F1BE00-B2CC-4BB8-B273-3EE041928AD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
