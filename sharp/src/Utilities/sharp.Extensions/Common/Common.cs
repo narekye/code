@@ -8,7 +8,7 @@ namespace sharp.Extensions.Common
 {
     public static class Common
     {
-        public static string Decompress(byte[] data)
+        public static string Decompress(this byte[] data)
         {
             using (var msi = new MemoryStream(data))
             using (var mso = new MemoryStream())
@@ -21,7 +21,7 @@ namespace sharp.Extensions.Common
             }
         }
 
-        public static byte[] Compress(string data)
+        public static byte[] Compress(this string data)
         {
             var bytes = Encoding.UTF8.GetBytes(data);
             using (var msi = new MemoryStream(bytes))
