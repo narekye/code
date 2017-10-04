@@ -3,10 +3,6 @@ using System;
 
 namespace sharp.Extensions.Client
 {
-    public class FF
-    {
-        public int I { get; set; }
-    }
     class Program
     {
         [STAThread]
@@ -14,15 +10,8 @@ namespace sharp.Extensions.Client
         {
             var pass = "poghos";
             byte[] arr = pass.Compress();
-
-
             var tt = arr.Decompress();
             Console.WriteLine(tt);
-
-
         }
-
-
     }
 }
-
