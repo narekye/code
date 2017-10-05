@@ -14,7 +14,7 @@ namespace sharp.ScreenCapturer.Service
             processInstaller = new ServiceProcessInstaller();
             processInstaller.Account = ServiceAccount.LocalSystem;
             _capturerServiceInstaller.StartType = ServiceStartMode.Manual;
-            _capturerServiceInstaller.ServiceName = "Service1";
+            _capturerServiceInstaller.ServiceName = "Service";
             Installers.Add(processInstaller);
             Installers.Add(_capturerServiceInstaller);
         }
