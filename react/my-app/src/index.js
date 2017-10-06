@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import caller from './helpers/caller';
+import clocks from './clock/clock'
 "use strict";
 // class Square extends React.Component {
 //     // constructor() {
@@ -33,56 +35,59 @@ class Board extends React.Component {
             xIsNext: true
         }
     }
-
+    componentDidMount() {
+        // fetch('sdasda')
+    }
     renderSquare(i) {
         return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />;
-    }
+        }
 
-    handleClick(i) {
-        const squares = this.state.squares.slice();
-        if (calculateWinner(squares) || squares[i]) {
-            return;
+        handleClick(i) {
+            const squares = this.state.squares.slice();
+            if (calculateWinner(squares) || squares[i]) {
+                return;
+            }
+            squares[i] = this.state.xIsNext ? 'X' : 'O';
+            this.setState({
+                squares: squares,
+                xIsNext: !this.state.xIsNext
+            });
         }
-        squares[i] = this.state.xIsNext ? 'X' : 'O';
-        this.setState({
-            squares: squares,
-            xIsNext: !this.state.xIsNext
-        });
-    }
-    
-    render() {
-        const winner = calculateWinner(this.state.squares);
-        let status;
-        if (winner) {
-            status = 'Winner: ' + winner;
-        } else {
-            status = 'Next player is: ' + (this.state.xIsNext ? 'X' : 'O')
-        }
-        return (
-            <div>
-                <div className="status">{status}</div>
-                <div className="board-row">
-                    {this.renderSquare(0)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
-                </div>
+
+        render() {
+
+            const winner = calculateWinner(this.state.squares);
+            let status;
+            if (winner) {
+                status = 'Winner: ' + winner;
+            } else {
+                status = 'Next player is: ' + (this.state.xIsNext ? 'X' : 'O')
+            }
+            return (
+                <div>
+                    <div className="status">{status}</div>
+                    <div className="board-row">
+                        {this.renderSquare(0)}
+            {this.renderSquare(1)}
+            {this.renderSquare(2)}
             </div>
-        );
+            <div className="board-row">
+                {this.renderSquare(3)}
+            {this.renderSquare(4)}
+            {this.renderSquare(5)}
+            </div>
+            <div className="board-row">
+                {this.renderSquare(6)}
+            {this.renderSquare(7)}
+            {this.renderSquare(8)}
+            </div>
+        </div>
+            );
+        }
     }
-}
 
-class Game extends React.Component {
-    render() {
+    class Game extends React.Component {
+        render() {
         return (
             <div className="game">
                 <div className="game-board">
@@ -93,7 +98,7 @@ class Game extends React.Component {
                     <ol>{/* TODO */}</ol>
                 </div>
             </div>
-        );
+            );
     }
 }
 
@@ -117,8 +122,20 @@ function calculateWinner(squares) {
     return null;
 }
 // ========================================
+function tick() {
+    const el = (<div>
+        <h1>Hello, world!</h1>
+        <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>);
+    ReactDOM.render(
+        el,
+        document.getElementById('root')
+    );
+};
 
-ReactDOM.render(
-    <Game />,
-    document.getElementById('root')
-);
+// ReactDOM.render(
+//     el,
+//     document.getElementById('root')
+// );
+
+setInterval(tick, 1000);

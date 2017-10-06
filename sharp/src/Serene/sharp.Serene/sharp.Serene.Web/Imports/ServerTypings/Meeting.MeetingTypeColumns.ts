@@ -1,0 +1,3 @@
+﻿namespace sharp.Serene.Meeting {
+}
+
