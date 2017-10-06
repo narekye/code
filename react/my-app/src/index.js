@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Loading from './loading/gifLoading.js';
+// eslint-disable-next-line
 "use strict";
 // class Square extends React.Component {
 //     // constructor() {
@@ -49,6 +51,7 @@ class Board extends React.Component {
             xIsNext: !this.state.xIsNext
         });
     }
+
     render() {
         const winner = calculateWinner(this.state.squares);
         let status;
@@ -88,9 +91,8 @@ class Game extends React.Component {
                     <Board />
                 </div>
                 <div className="game-info">
-                    <div>{/* status */}</div>
-                    <ol>{/* TODO */}</ol>
                 </div>
+                {/* <Loading /> */}
             </div>
         );
     }

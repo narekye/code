@@ -1,0 +1,11 @@
+.load {
+    background-image:url('../styles/doub.gif');
+    position: fixed;
+    top: 0;
+    left: 0%;
+    bottom: 0;
+    width: 100%;
+    background-repeat:no-repeat;
+ 	background-position:center;
+    z-index: 999; 
+}
