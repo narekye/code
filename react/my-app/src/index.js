@@ -40,7 +40,7 @@ class Board extends React.Component {
 
     handleClick(i) {
         const squares = this.state.squares.slice();
-        if (calculateWinner(squares)) {
+        if (calculateWinner(squares) || squares[i]) {
             return;
         }
         squares[i] = this.state.xIsNext ? 'X' : 'O';
@@ -49,6 +49,7 @@ class Board extends React.Component {
             xIsNext: !this.state.xIsNext
         });
     }
+    
     render() {
         const winner = calculateWinner(this.state.squares);
         let status;
