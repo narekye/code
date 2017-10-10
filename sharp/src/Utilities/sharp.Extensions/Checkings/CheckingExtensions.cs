@@ -4,7 +4,7 @@ namespace sharp.Extensions.Checkings
 {
     public static class CheckingExtensions
     {
-        public static void ThrowIfNull<T>(this T obj, string parameterName = null)
+        public static void ThrowIfNull<T>(this T obj)
         {
             if (obj == null) throw new ArgumentNullException(Constants.Exceptions.ArgumentCannotBeNull);
         }
