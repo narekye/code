@@ -4,14 +4,15 @@ namespace sharp.Extensions.Checkings
 {
     public static class CheckingExtensions
     {
-        public static void ThrowIfNull<T>(this T obj)
+        public static void ThrowIfNull<T>(this T obj, Exception e = null)
         {
-            if (obj == null) throw new ArgumentNullException(Constants.Exceptions.ArgumentCannotBeNull);
+            if (obj == null) throw e.IsNull() ? new ArgumentNullException() : e;
         }
 
         public static bool IsNull<T>(this T obj) where T : class
         {
             return ReferenceEquals(obj, null);
+
         }
     }
 }

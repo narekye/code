@@ -1,4 +1,4 @@
-﻿using System;
+﻿using sharp.Extensions.Checkings;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -8,8 +8,7 @@ namespace sharp.Extensions.Xml
     {
         public static string XmlSerialize<T>(this T obj) where T : class
         {
-            if (obj == null) throw new ArgumentNullException($"The argument {nameof(obj)} cannot be null");
-
+            obj.ThrowIfNull();
             var serializer = new XmlSerializer(typeof(T));
             using (var writer = new StringWriter())
             {
@@ -20,8 +19,7 @@ namespace sharp.Extensions.Xml
 
         public static T XmlDeserializeOrDefault<T>(this string xml) where T : class
         {
-            if (xml == null) throw new ArgumentNullException($"The argument {nameof(xml)} cannot be null");
-
+            xml.ThrowIfNull();
             var serializer = new XmlSerializer(typeof(T));
             using (var reader = new StringReader(xml))
             {
