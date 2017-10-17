@@ -123,13 +123,17 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\DefaultAuthorizeAttribute.cs" />
+    <Compile Include="Common\Extensions\OwinExtensions.cs" />
+    <Compile Include="Common\Utils\CommonUtils.cs" />
     <Compile Include="Config\Startup.cs" />
-    <Compile Include="Controllers\CookieController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Core\BaseApiController.cs" />
     <Compile Include="Filters\Exception\ActionExceptionAttribute.cs" />
+    <Compile Include="Middlewares\RequestContentMiddleware.cs" />
     <Compile Include="Models\Response\Error.cs" />
-    <Compile Include="Models\Response\ErrorModel.cs" />
-    <Compile Include="Models\Response\SuccessModel.cs" />
+    <Compile Include="Models\Response\ErrorResponse.cs" />
+    <Compile Include="Models\Response\SuccessResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

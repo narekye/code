@@ -1,13 +1,13 @@
-﻿namespace sharp.aspnet.webapi.Models
+﻿namespace sharp.aspnet.webapi.Models.Response
 {
-    public class SuccessModel<T> where T : class 
+    public class SuccessResponse<T> where T : class
     {
         public Error Errors { get; set; }
         public T Data { get; set; }
-        
-        public static SuccessModel<T> Success(T data)
+
+        public static SuccessResponse<T> Success(T data)
         {
-            var response = new SuccessModel<T>
+            var response = new SuccessResponse<T>
             {
                 Data = data,
                 Errors = new Error { Exception = null, HasError = false }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace sharp.aspnet.webapi.Models
+namespace sharp.aspnet.webapi.Models.Response
 {
     public class Error
     {

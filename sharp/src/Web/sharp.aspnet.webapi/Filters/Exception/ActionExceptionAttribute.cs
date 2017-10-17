@@ -1,10 +1,12 @@
-﻿using System;
+﻿using sharp.aspnet.webapi.Models.Response;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.Filters;
 
 namespace sharp.aspnet.webapi.Filters.Exception
 {
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class ActionExceptionAttribute : Attribute, IExceptionFilter
     {
         public bool AllowMultiple => true;
@@ -16,7 +18,7 @@ namespace sharp.aspnet.webapi.Filters.Exception
             {
                 return null;
             }
-            return Task.FromResult(new object());
+            return Task.FromResult(ErrorResponse.Create(actionExecutedContext.Exception));
         }
     }
 }

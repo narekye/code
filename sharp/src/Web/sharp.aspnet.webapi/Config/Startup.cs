@@ -1,7 +1,8 @@
-﻿using System.Web.Http;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Owin;
+using sharp.aspnet.webapi.Middlewares;
+using System.Web.Http;
 
 [assembly: OwinStartup(typeof(sharp.aspnet.webapi.Config.Startup))]
 
@@ -13,6 +14,7 @@ namespace sharp.aspnet.webapi.Config
         {
             HttpConfiguration config = new HttpConfiguration();
             Configure(config);
+            app.Use<RequestContentMiddleware>();
             app.UseCors(CorsOptions.AllowAll);
             app.UseWebApi(config);
         }
