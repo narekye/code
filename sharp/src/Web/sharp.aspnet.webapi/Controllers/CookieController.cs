@@ -17,11 +17,7 @@ namespace sharp.aspnet.webapi.Controllers
         public HttpResponseMessage GetData()
         {
             CookieHeaderValue cookie = new CookieHeaderValue(cookieName, cookieValue) { Expires = DateTimeOffset.Now.AddHours(1) };
-            HttpResponseMessage response = Create200(new SuccessModel<object>
-            {
-                Data = null,
-                Error = null
-            });
+            HttpResponseMessage response = Create200Response();
             response.Headers.AddCookies(new[] { cookie });
             return response;
         }
@@ -29,10 +25,9 @@ namespace sharp.aspnet.webapi.Controllers
         public HttpResponseMessage GetCookie([FromUri]string key)
         {
             CookieHeaderValue cookie = Request.Headers.GetCookies(cookieName).FirstOrDefault();
-            if (cookie != null) return Create200(new SuccessModel<string>
+            if (cookie != null) return Create200Response(new SuccessModel<string>
             {
-                Data = cookie[cookieName].Value,
-                Error = null
+                Data = cookie[cookieName].Value
             });
             return null;
         }

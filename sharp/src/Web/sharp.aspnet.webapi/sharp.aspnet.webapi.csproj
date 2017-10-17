@@ -127,7 +127,9 @@
     <Compile Include="Controllers\CookieController.cs" />
     <Compile Include="Core\BaseApiController.cs" />
     <Compile Include="Filters\Exception\ActionExceptionAttribute.cs" />
-    <Compile Include="Models\SuccessModel.cs" />
+    <Compile Include="Models\Response\Error.cs" />
+    <Compile Include="Models\Response\ErrorModel.cs" />
+    <Compile Include="Models\Response\SuccessModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
