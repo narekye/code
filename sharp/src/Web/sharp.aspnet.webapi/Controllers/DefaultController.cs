@@ -1,6 +1,7 @@
 ﻿using sharp.aspnet.webapi.Attributes;
 using sharp.aspnet.webapi.Core;
 using sharp.aspnet.webapi.Filters.Exception;
+using System.Web.Http;
 
 namespace sharp.aspnet.webapi.Controllers
 {
@@ -9,5 +10,9 @@ namespace sharp.aspnet.webapi.Controllers
     public class DefaultController : BaseApiController
     {
         // an empty controller
+        public IHttpActionResult Get()
+        {
+            return Ok();
+        }
     }
 }

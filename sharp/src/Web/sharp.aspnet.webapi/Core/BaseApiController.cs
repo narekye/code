@@ -8,8 +8,8 @@ namespace sharp.aspnet.webapi.Core
 {
     public class BaseApiController : ApiController
     {
-        public string Session { get; set; } // You can change it
-        protected virtual HttpResponseMessage Create200Response<T>(T data = null) where T : class
+        public string Session { get; set; } // You can change type of session
+        protected new virtual HttpResponseMessage Ok<T>(T data = null) where T : class
         {
             HttpResponseMessage message;
             if (data == null)
@@ -22,38 +22,35 @@ namespace sharp.aspnet.webapi.Core
             return message;
         }
 
-        public virtual HttpResponseMessage Create200Response()
-        {
-            var message = Request.CreateResponse(HttpStatusCode.OK);
-            return message;
-        }
-
-
-        public virtual HttpResponseMessage Create201Response()
+        public virtual HttpResponseMessage Created()
         {
             return Request.CreateResponse(HttpStatusCode.Created);
         }
 
-        public virtual HttpResponseMessage Create202Response()
+        public virtual HttpResponseMessage Accepted()
         {
             return Request.CreateResponse(HttpStatusCode.Accepted);
         }
 
-        public virtual HttpResponseMessage Create400Response()
+        public new virtual HttpResponseMessage BadRequest()
         {
             return Request.CreateResponse(HttpStatusCode.BadRequest);
         }
 
-        public virtual HttpResponseMessage Create404Response()
+        public new virtual HttpResponseMessage NotFound()
         {
             return Request.CreateResponse(HttpStatusCode.NotFound);
         }
 
-        public virtual HttpResponseMessage Create502Response()
+        public virtual HttpResponseMessage BadGateway()
         {
             return Request.CreateResponse(HttpStatusCode.BadGateway);
         }
 
+        public virtual HttpResponseMessage Unauthorized()
+        {
+            return Request.CreateResponse(HttpStatusCode.Unauthorized);
+        }
         public virtual HttpResponseMessage CreateHtmlResponse(string html)
         {
             var response = new HttpResponseMessage { Content = new StringContent(html) };

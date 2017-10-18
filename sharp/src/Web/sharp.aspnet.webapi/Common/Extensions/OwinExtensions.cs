@@ -8,7 +8,7 @@ namespace sharp.aspnet.webapi.Common.Extensions
     {
         public static JToken GetRequestJsonBody(this IOwinContext context)
         {
-            JToken body = null;
+            JToken body;
 
             if (RequestContentMiddleware.RequestJsonBody.TryGetValue(context.Request, out body))
             {

@@ -45,10 +45,9 @@ namespace sharp.aspnet.webapi.Attributes
         protected override void HandleUnauthorizedRequest(HttpActionContext actionContext)
         {
             var controller = actionContext.ControllerContext.Controller as BaseApiController;
-            if (controller != null)
-                actionContext.Response = actionContext.Request.CreateResponse(controller.Create400Response());
-            else
-                actionContext.Response = new HttpResponseMessage(HttpStatusCode.NotFound);
+            actionContext.Response = controller != null
+                ? actionContext.Request.CreateResponse(controller.Unauthorized())
+                : actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
         }
 
         private string GetSession(string token)
@@ -58,7 +57,8 @@ namespace sharp.aspnet.webapi.Attributes
             if (Sessions.TryGetValue(token, out session))
             {
                 // if expired time
-                Sessions.TryRemove(session, out session);
+                if (false)
+                    Sessions.TryRemove(session, out session);
             }
             return session;
         }
