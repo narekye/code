@@ -51,10 +51,14 @@ namespace sharp.aspnet.webapi.Core
         {
             return Request.CreateResponse(HttpStatusCode.Unauthorized);
         }
+
         public virtual HttpResponseMessage CreateHtmlResponse(string html)
         {
-            var response = new HttpResponseMessage { Content = new StringContent(html) };
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
+            var response = new HttpResponseMessage();
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue(Extensions.Constants.ContentType.Html);
+            if (string.IsNullOrEmpty(html))
+                html = Extensions.Constants.HTML.Empty;
+            response.Content = new StringContent(html);
             return response;
         }
     }

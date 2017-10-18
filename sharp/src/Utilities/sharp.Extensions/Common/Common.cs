@@ -34,6 +34,7 @@ namespace sharp.Extensions.Common
                 return mso.ToArray();
             }
         }
+
         public static string GenerateToken()
         {
             string guid = Guid.NewGuid().ToString();

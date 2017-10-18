@@ -1,4 +1,5 @@
 ﻿using sharp.aspnet.webapi.Models.Response;
+using sharp.Extensions.Checkings;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace sharp.aspnet.webapi.Filters.Exception
         public Task ExecuteExceptionFilterAsync(HttpActionExecutedContext actionExecutedContext, CancellationToken cancellationToken)
         {
             // Line for exception logger
-            if (actionExecutedContext.Exception != null)
+            if (actionExecutedContext.Exception.IsNull())
             {
                 return null;
             }

@@ -25,13 +25,13 @@ namespace sharp.Extensions.String
 
         public static bool UrlAvailable(this string httpUrl)
         {
-            if (!httpUrl.StartsWith(HttpConstants.Http) || !httpUrl.StartsWith(HttpConstants.Https))
-                httpUrl = HttpConstants.Http + httpUrl;
+            if (!httpUrl.StartsWith(HttpConstant.Http) || !httpUrl.StartsWith(HttpConstant.Https))
+                httpUrl = HttpConstant.Http + httpUrl;
             try
             {
                 HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(httpUrl);
-                myRequest.Method = HttpConstants.GET;
-                myRequest.ContentType = ContentTypes.XFormUrlEncoded;
+                myRequest.Method = HttpConstant.GET;
+                myRequest.ContentType = ContentType.XFormUrlEncoded;
                 HttpWebResponse myHttpWebResponse = (HttpWebResponse)myRequest.GetResponse();
                 return true;
             }

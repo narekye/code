@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using sharp.aspnet.webapi.Common.Extensions;
 using sharp.aspnet.webapi.Core;
+using sharp.Extensions.Checkings;
 using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Http;
@@ -11,7 +12,6 @@ namespace sharp.aspnet.webapi.Attributes
 {
     public class DefaultAuthorizeAttribute : AuthorizeAttribute
     {
-        private const string Token = "Token";
         private static readonly ConcurrentDictionary<string, string> Sessions = new ConcurrentDictionary<string, string>();
 
         protected override bool IsAuthorized(HttpActionContext actionContext)
@@ -21,18 +21,19 @@ namespace sharp.aspnet.webapi.Attributes
                 var owin = actionContext.Request.GetOwinContext();
                 var requestData = owin.GetRequestJsonBody();
 
-                if (requestData[Token] == null) return false;
+                if (requestData[Extensions.Constants.Constants.Token].IsNull()) return false;
 
-                var token = requestData[Token].Value<string>();
+                var token = requestData[Extensions.Constants.Constants.Token].Value<string>();
 
                 var session = GetSession(token);
 
                 var controller = actionContext.ControllerContext.Controller as BaseApiController;
 
-                if (controller == null || session == null)
+                if (session.IsNull())
                     return false;
 
-                controller.Session = session;
+                if (controller.IsNotNull() && session.IsNotNull())
+                    controller.Session = session;
                 return true;
             }
             catch
@@ -45,7 +46,7 @@ namespace sharp.aspnet.webapi.Attributes
         protected override void HandleUnauthorizedRequest(HttpActionContext actionContext)
         {
             var controller = actionContext.ControllerContext.Controller as BaseApiController;
-            actionContext.Response = controller != null
+            actionContext.Response = !controller.IsNull()
                 ? actionContext.Request.CreateResponse(controller.Unauthorized())
                 : actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
         }

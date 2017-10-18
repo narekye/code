@@ -132,7 +132,12 @@
     <Compile Include="Models\Response\SuccessResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Utilities\sharp.Extensions\sharp.Extensions.csproj">
+      <Project>{aa32d486-437d-43e4-bd99-5b00c3dbf8c6}</Project>
+      <Name>sharp.Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
