@@ -124,7 +124,7 @@
     <Compile Include="Config\Startup.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Core\BaseApiController.cs" />
-    <Compile Include="Filters\Exception\ActionExceptionAttribute.cs" />
+    <Compile Include="Filters\Exception\ExceptionFilterAttribute.cs" />
     <Compile Include="Helpers\Logger\NLogger.cs" />
     <Compile Include="Middlewares\RequestContentMiddleware.cs" />
     <Compile Include="Models\Response\Error.cs" />

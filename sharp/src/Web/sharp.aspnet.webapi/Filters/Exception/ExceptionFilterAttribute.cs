@@ -8,7 +8,7 @@ using System.Web.Http.Filters;
 namespace sharp.aspnet.webapi.Filters.Exception
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
-    public class ActionExceptionAttribute : Attribute, IExceptionFilter
+    public class ExceptionFilterAttribute : Attribute, IExceptionFilter
     {
         public bool AllowMultiple => true;
 

@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Controllers;
-
+using Constants = sharp.Extensions.Constants.Constants;
 namespace sharp.aspnet.webapi.Attributes
 {
     public class DefaultAuthorizeAttribute : AuthorizeAttribute
@@ -19,11 +19,11 @@ namespace sharp.aspnet.webapi.Attributes
             try
             {
                 var owin = actionContext.Request.GetOwinContext();
-                var requestData = owin.GetRequestJsonBody();
+                var requestData = owin.GetRequestJsonBody(); // always returns null
 
-                if (requestData[Extensions.Constants.Constants.Token].IsNull()) return false;
+                if (requestData[Constants.Token].IsNull()) return false;
 
-                var token = requestData[Extensions.Constants.Constants.Token].Value<string>();
+                var token = requestData[Constants.Token].Value<string>();
 
                 var session = GetSession(token);
 

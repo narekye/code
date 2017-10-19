@@ -1,8 +1,9 @@
 ﻿using Microsoft.Owin;
 using Newtonsoft.Json.Linq;
-using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using ContentType = sharp.Extensions.Constants.ContentType;
+using Http = sharp.Extensions.Constants.HttpConstant;
 
 namespace sharp.aspnet.webapi.Middlewares
 {
@@ -14,8 +15,8 @@ namespace sharp.aspnet.webapi.Middlewares
 
         public override async Task Invoke(IOwinContext context)
         {
-            bool bodyIsJson = context.Request.ContentType?.Contains("appliaction/json") ?? false;
-            if (bodyIsJson && (context.Request.Method == HttpMethod.Post.Method || context.Request.Method == HttpMethod.Put.Method))
+            bool bodyIsJson = context.Request.ContentType?.Contains(ContentType.Json) ?? false;
+            if (bodyIsJson && (context.Request.Method == Http.POST || context.Request.Method == Http.PUT))
             {
                 var json = await Common.Utils.CommonUtils.GetRequestBodyFromRequestStream(context.Request);
                 var body = JToken.Parse(json);
