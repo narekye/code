@@ -20,6 +20,7 @@ namespace sharp.Extra.Quartz.NET.Jobs
                 Body = body,
                 IsBodyHtml = true
             })
+
             using (SmtpClient client = new SmtpClient
             {
                 Host = "smtp.gmail.com",
