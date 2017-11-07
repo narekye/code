@@ -1,29 +1,53 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
-using Newtonsoft.Json;
+using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace sharp.network.httpListener
 {
     class Program
     {
         private static int stCode = 200;
+        private static dynamic body;
         private static int reqcount;
         private const string Received = "Received method: ";
         private const string URL = "http://localhost:8888/";
+        private static string[] content_type = new string[] { "application/json", "application/xml" };
+        private static string cType = null;
+        [STAThread]
         static void Main()
         {
             Console.Title = "AJAX http server";
 
             Dialog();
+            var dialogOpen = new OpenFileDialog()
+            {
+                Multiselect = false,
+                Title = "Select json file for returning as response",
+                Filter = "json document| *.json; *.txt"
+            };
+            using (dialogOpen)
+            {
+                if (dialogOpen.ShowDialog() == DialogResult.OK)
+                {
+                    var file = File.ReadAllText(dialogOpen.FileName);
+
+                    body = JsonConvert.DeserializeObject<object>(file);
+                    Console.WriteLine();
+                }
+            }
             HttpListener listener = new HttpListener();
             listener.Prefixes.Add(URL);
             listener.Start();
             while (true)
             {
-                if(reqcount == 20) Console.Clear();
+                if (reqcount == 20) Console.Clear();
                 Console.BackgroundColor = ConsoleColor.DarkBlue;
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write(reqcount + ": ");
@@ -47,14 +71,29 @@ namespace sharp.network.httpListener
 
                 HttpListenerResponse response = context.Response;
                 response.StatusCode = stCode;
-                response.Headers.Add("Content-Type", "application/json");
-                Dictionary<string, string> keyvalue = new Dictionary<string, string>()
+                response.Headers.Add("Content-Type", cType);
+                if (body == null)
                 {
-                    { "key1","value1" },
-                    { "key2","value2" }
+                    body = new Dictionary<string, string>
+                    {
+                        {"Empty", "Empty"}
+                    };
+                }
+                byte[] buffer;
 
-                };
-                byte[] buffer = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(keyvalue));
+                if (cType == content_type.Last())
+                {
+                    var xsSub = new XmlSerializer(typeof(object));
+                    using (var sww = new StringWriter())
+                    using (XmlWriter writer = XmlWriter.Create(sww))
+                    {
+                        dynamic obj = JsonConvert.DeserializeObject<object>(body);
+                        xsSub.Serialize(writer, obj);
+                        buffer = Encoding.UTF8.GetBytes(sww.ToString());
+                    }
+                }
+                else
+                    buffer = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(body));
                 response.ContentLength64 = buffer.Length;
                 Stream output = response.OutputStream;
                 output.Write(buffer, 0, buffer.Length);
@@ -107,7 +146,18 @@ namespace sharp.network.httpListener
                 default:
                     goto Here;
             }
+            while (cType == null)
+            {
+                Console.WriteLine("Content-Type ? \n 1. - Json \n 2. - XML");
+                string ans = Console.ReadLine();
+                if (ans.Contains("2"))
+                    cType = content_type.Last();
+                else if (ans.Contains("1"))
 
+                    cType = content_type.First();
+                else
+                    Console.WriteLine("Wrong input.. Try again.");
+            }
             Console.Clear();
             Console.Write("Current sending status code: ");
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -117,7 +167,7 @@ namespace sharp.network.httpListener
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("\nPerform your AJAX requests to address: " + URL);
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("\nServer ON. Waiting for requests...");
+            Console.WriteLine($"\nServer ON. Waiting for requests... Content-Type : {cType}");
         }
     }
 

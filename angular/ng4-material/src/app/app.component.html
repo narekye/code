@@ -1,0 +1,46 @@
+<mat-toolbar color='primary'>
+  <div class="main_menu">
+    <span>{{title}}</span>
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="appMenu">
+    <mat-icon> menu </mat-icon> Menu </button>
+  </div>
+</mat-toolbar>
+<div [hidden]="!this.loading">
+  <mat-spinner ></mat-spinner>
+</div>
+
+
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item [disabled]='flag' (click)='login()'> Settings </button>
+  <button mat-menu-item> Help </button>
+</mat-menu>
+
+<div class="example-container mat-elevation-z8" style="text-align: center">
+  <mat-table #table [dataSource]="dataSource ">
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Full Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="weight">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="symbol">
+      <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+      <mat-cell style="align: center" *matCellDef="let element">
+        <button  mat-button> Edit </button>
+        <button mat-button> Delete </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator #paginator [length]="dataLen" [pageSize]="pageSize" [pageIndex]="0" [pageSizeOptions]="[5, 10, 25]">
+  </mat-paginator>
+</div>
