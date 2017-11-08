@@ -1,43 +1,71 @@
-﻿using sharp.Extensions.Checkings;
-using System;
-using System.Linq;
-using System.Net;
-using System.Net.Mail;
-using System.Security.Authentication;
-
-namespace sharp.Extensions.Mail.Gmail
+﻿namespace sharp.Extensions.Mail.Gmail
 {
+    using Checkings;
+    using System.Linq;
+
     public class GmailSender
     {
-        private MailMessage message;
-        private SmtpClient client;
+        private readonly System.Net.Mail.MailMessage message;
+        private readonly System.Net.Mail.SmtpClient client;
+
+        #region Constructors
         /// <summary>
         /// Initializes an empty mail
         /// </summary>
         public GmailSender()
         {
-            client = new SmtpClient
+            client = new System.Net.Mail.SmtpClient
             {
                 Host = "smtp.gmail.com",
                 Port = 587,
                 EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
+                DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false
             };
 
-            message = new MailMessage
+            message = new System.Net.Mail.MailMessage
             {
                 IsBodyHtml = false
             };
         }
+
         /// <summary>
-        /// 
+        /// Initializes an GmailSender class instance on which is setted mail address from and setted mail address to.
         /// </summary>
         /// <param name="from"></param>
         /// <param name="to"></param>
-        public GmailSender(MailAddress to) : this()
+        ///<returns>New instance of class GmailSender</returns>
+        public GmailSender(System.Net.Mail.MailAddress from, System.Net.Mail.MailAddress to) : this()
         {
+            message.From = from;
             message.To.Add(to);
+        }
+
+        public GmailSender(string from, string to) : this(new System.Net.Mail.MailAddress(from), new
+            System.Net.Mail.MailAddress(to))
+        { }
+        #endregion
+        /// <summary>
+        /// Adds the list of mail addresses to mailing list.
+        /// </summary>
+        /// <param name="addresses"></param>
+        /// <returns></returns>
+        public GmailSender AddToMailingList(System.Collections.Generic.IEnumerable<System.Net.Mail.MailAddress> addresses)
+        {
+            foreach (var mailAddress in addresses)
+            {
+                message.To.Add(mailAddress);
+            }
+            return this;
+        }
+
+        public GmailSender AddToMailingList(System.Collections.Generic.IEnumerable<string> addresses)
+        {
+            var listMailAddresses = new System.Collections.Generic.List<System.Net.Mail.MailAddress>();
+
+            foreach (var address in addresses)
+                listMailAddresses.Add(new System.Net.Mail.MailAddress(address));
+            return AddToMailingList(listMailAddresses);
         }
 
         /// <summary>
@@ -46,7 +74,7 @@ namespace sharp.Extensions.Mail.Gmail
         public void Send()
         {
             if (!message.To.Any())
-                throw new Exception("Mail message to is not set.");
+                throw new System.Exception("Mail message to is not set.");
             client.Send(message);
         }
         /// <summary>
@@ -78,8 +106,8 @@ namespace sharp.Extensions.Mail.Gmail
         public GmailSender SetCredentials(string username, string password)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-                throw new InvalidCredentialException();
-            client.Credentials = new NetworkCredential(username, password);
+                throw new System.Security.Authentication.InvalidCredentialException();
+            client.Credentials = new System.Net.NetworkCredential(username, password);
             return this;
         }
 
@@ -88,10 +116,10 @@ namespace sharp.Extensions.Mail.Gmail
         /// </summary>
         /// <param name="credential"></param>
         /// <returns></returns>
-        public GmailSender SetCredentials(NetworkCredential credential)
+        public GmailSender SetCredentials(System.Net.NetworkCredential credential)
         {
             if (credential.IsNull())
-                throw new InvalidCredentialException();
+                throw new System.Security.Authentication.InvalidCredentialException();
             client.Credentials = credential;
             return this;
         }

@@ -1,18 +1,9 @@
-﻿using iTextSharp.text;
-using iTextSharp.text.pdf;
-using sharp.Extensions.Checkings;
-using sharp.Extensions.Constants;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace sharp.Extensions.ExportFiles
+﻿namespace sharp.Extensions.ExportFiles
 {
+    using Checkings;
+    using Constants;
+    using System.Linq;
+
     public static class ExportToFileExtensions
     {
         /// <summary>
@@ -23,28 +14,26 @@ namespace sharp.Extensions.ExportFiles
         /// <param name="source"></param>
         /// <param name="path"></param>
         /// <param name="fileType"></param>
-        public static async Task ToCsv<T>(this T source, string path = null, FileExtensionEnum fileType = FileExtensionEnum.Csv)
+        /// <returns>Awaitable task.</returns>
+        public static async System.Threading.Tasks.Task ToCsv<T>(this T source, string path = null, FileExtensionEnum fileType = FileExtensionEnum.Csv) where T : class
         {
             source.ThrowIfNull();
-            StringBuilder builder = new StringBuilder();
+            System.Text.StringBuilder builder = new System.Text.StringBuilder();
             if (!string.IsNullOrEmpty(path))
-            {
-                builder.Append(path);
-                builder.Append(fileType);
-            }
+                builder.Append(path).Append(fileType);
             else
             {
                 builder.Clear()
-                    .Append(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)).Append('/')
+                    .Append(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop)).Append('/')
                     .Append(System.DateTime.Now.ToShortDateString().Replace('/', '-')).Append('.');
                 builder.Append(fileType);
             }
 
             var propertiesInfo = source.GetType().GetProperties().Select(x => x.Name);
-            var objects = propertiesInfo as IList<string> ?? propertiesInfo.ToList();
+            var objects = propertiesInfo as System.Collections.Generic.IList<string> ?? propertiesInfo.ToList();
             objects.ThrowIfNull();
 
-            using (FileStream stream = File.Create(builder.ToString()))
+            using (System.IO.FileStream stream = System.IO.File.Create(builder.ToString()))
             {
                 // Property name write.
                 builder.Clear();
@@ -58,7 +47,7 @@ namespace sharp.Extensions.ExportFiles
                     builder.Append(s).Append(',');
                 }
 
-                byte[] text = new UTF8Encoding(true).GetBytes(builder + Environment.NewLine);
+                byte[] text = new System.Text.UTF8Encoding(true).GetBytes(builder + System.Environment.NewLine);
                 await stream.WriteAsync(text, 0, text.Length);
 
                 // Property value write.
@@ -74,34 +63,36 @@ namespace sharp.Extensions.ExportFiles
                     builder.Append(value).Append(',');
 
                 }
-                text = new UTF8Encoding(true).GetBytes(builder.ToString());
+                text = new System.Text.UTF8Encoding(true).GetBytes(builder.ToString());
                 await stream.WriteAsync(text, 0, builder.Length);
             }
         }
 
-        public static async Task ToCsv<T>(this IEnumerable<T> source) { }
+        // public static async Task ToCsv<T>(this IEnumerable<T> source) { }
         public static void ToXlxs<T>(this T @object) { }
-        public static void ToXlxs<T>(this IEnumerable<T> source) { }
+        public static void ToXlxs<T>(this System.Collections.Generic.IEnumerable<T> source) { }
 
-        public static void ToPdfFile<T>(this IEnumerable<T> source, string path = null) where T : class
+        public static void ToPdfFile<T>(this System.Collections.Generic.IEnumerable<T> source, string path = null) where T : class
         {
             source.ThrowIfNull();
-            Document document = new Document();
+            iTextSharp.text.Document document = new iTextSharp.text.Document();
+
             if (string.IsNullOrWhiteSpace(path))
-            {
-                path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            }
+                path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+
             path += $"\\{System.DateTime.Now.ToShortDateString().Replace('/', '-')}_table.pdf";
-            PdfWriter.GetInstance(document, new FileStream(path, FileMode.Create));
+            iTextSharp.text.pdf.PdfWriter.GetInstance(document, new System.IO.FileStream(path, System.IO.FileMode.Create));
             document.Open();
-            BaseFont baseFont = BaseFont.CreateFont(@"C:\Windows\Fonts\arial.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            Font font = new Font(baseFont, Font.DEFAULTSIZE);
+            iTextSharp.text.pdf.BaseFont baseFont = iTextSharp.text.pdf.BaseFont.CreateFont(@"C:\Windows\Fonts\arial.ttf",
+                iTextSharp.text.pdf.BaseFont.IDENTITY_H, iTextSharp.text.pdf.BaseFont.NOT_EMBEDDED);
+            iTextSharp.text.Font font = new iTextSharp.text.Font(baseFont, iTextSharp.text.Font.DEFAULTSIZE);
             var propertyInfoArray = typeof(T).GetProperties().ToList();
             var properties = propertyInfoArray.Select(x => x.Name).ToList();
-            if (properties == null)
-                throw new Exception("Properties count is 0.");
-            PdfPTable table = new PdfPTable(properties.Count);
-            PdfPCell cell = new PdfPCell(new Phrase($"Database table writed at - {System.DateTime.Now.Date}", font))
+
+            properties.ThrowIfNull(new System.Exception("Properties count is 0."));
+
+            iTextSharp.text.pdf.PdfPTable table = new iTextSharp.text.pdf.PdfPTable(properties.Count);
+            iTextSharp.text.pdf.PdfPCell cell = new iTextSharp.text.pdf.PdfPCell(new iTextSharp.text.Phrase($"Database table writed at - {System.DateTime.Now.Date}", font))
             {
                 Colspan = properties.Count,
                 HorizontalAlignment = 1,
@@ -110,35 +101,39 @@ namespace sharp.Extensions.ExportFiles
             table.AddCell(cell);
             foreach (string item in properties)
             {
-                cell = new PdfPCell(new Phrase(item, font));
-                cell.BackgroundColor = BaseColor.GREEN;
+                cell = new iTextSharp.text.pdf.PdfPCell(new iTextSharp.text.Phrase(item, font));
+                cell.BackgroundColor = iTextSharp.text.BaseColor.GREEN;
                 table.AddCell(cell);
             }
             var listOfObjects = source.ToList();
             foreach (var item in listOfObjects)
             {
-                foreach (PropertyInfo propertyInfo in propertyInfoArray)
+                foreach (System.Reflection.PropertyInfo propertyInfo in propertyInfoArray)
                 {
                     string propertyName = propertyInfo.Name;
                     object propertyValue = item?.GetType().GetProperty(propertyName)?.GetValue(item, null);
-                    if (propertyValue is IEnumerable && !(propertyValue is string))
+                    if (propertyValue is System.Collections.IEnumerable && !(propertyValue is string))
                     {
-                        cell = new PdfPCell(new Phrase("Collection", font));
-                        font.Color = BaseColor.RED;
+                        cell = new iTextSharp.text.pdf.PdfPCell(new iTextSharp.text.Phrase("Collection", font));
+                        font.Color = iTextSharp.text.BaseColor.RED;
                     }
                     else
                     {
                         bool isNull = propertyValue.IsNull();
                         string text = isNull ? "Empty" : propertyValue?.ToString();
-                        cell = new PdfPCell(new Phrase($"{text}", font));
-                        font.Color = BaseColor.BLACK;
-                        cell.BackgroundColor = BaseColor.WHITE;
+                        cell = new iTextSharp.text.pdf.PdfPCell(new iTextSharp.text.Phrase($"{text}", font));
+                        font.Color = iTextSharp.text.BaseColor.BLACK;
+                        cell.BackgroundColor = iTextSharp.text.BaseColor.WHITE;
                     }
                     table.AddCell(cell);
-                    font.Color = BaseColor.BLACK;
+                    font.Color = iTextSharp.text.BaseColor.BLACK;
                 }
             }
-            document.Add(table);
+            bool added = document.Add(table);
+
+            if (!added)
+                throw new System.Exception("Table wasn't added to document. Please verify your object.");
+
             document.Close();
         }
     }

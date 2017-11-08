@@ -62,13 +62,10 @@
             internalCache.Add(key, new CacheItem(result, expiresMin));
         }
 
-
         private static void Remove(string key)
         {
             if (internalCache.ContainsKey(key))
-            {
                 internalCache.Remove(key);
-            }
         }
     }
 }

@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace sharp.Extensions.Exceptions
+﻿namespace sharp.Extensions.Exceptions
 {
     public static class ExceptionExtensions
     {
-        public static string GetMessageFromException(Exception ex)
+        public static string GetMessageFromException(System.Exception ex)
         {
             while (ex.InnerException != null)
                 ex = ex.InnerException;
