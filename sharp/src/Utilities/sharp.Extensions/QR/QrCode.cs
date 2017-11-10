@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sharp.Extensions.Checkings;
+using System;
 using System.Drawing;
 using ZXing;
 using ZXing.QrCode;
@@ -9,7 +10,8 @@ namespace sharp.Extensions.QR
     {
         public static void GenerateBarCode(string text, int width = 250, int height = 250)
         {
-            if (string.IsNullOrEmpty(text)) throw new ArgumentException("Text cannot be null or empty.");
+            text.ThrowIfNull(new ArgumentException("Text cannot be null or empty."));
+
             var options = new QrCodeEncodingOptions
             {
                 DisableECI = true,
