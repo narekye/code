@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.Serene.Web", "src\Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.Cache.Redis", "src\Cache\sharp.Cache.Redis\sharp.Cache.Redis.csproj", "{049DFBED-0CD1-444C-A2C2-4C65CF343F6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.WebDav", "src\WebDAV\sharp.WebDav\sharp.WebDav.csproj", "{49C6F32A-1CB7-4FD7-BB06-68A10DDDC3DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{049DFBED-0CD1-444C-A2C2-4C65CF343F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{049DFBED-0CD1-444C-A2C2-4C65CF343F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{049DFBED-0CD1-444C-A2C2-4C65CF343F6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49C6F32A-1CB7-4FD7-BB06-68A10DDDC3DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49C6F32A-1CB7-4FD7-BB06-68A10DDDC3DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49C6F32A-1CB7-4FD7-BB06-68A10DDDC3DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49C6F32A-1CB7-4FD7-BB06-68A10DDDC3DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

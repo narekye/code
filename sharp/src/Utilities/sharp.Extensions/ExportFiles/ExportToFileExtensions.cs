@@ -68,7 +68,10 @@
             }
         }
 
-        // public static async Task ToCsv<T>(this IEnumerable<T> source) { }
+        public static void ToCsv<T>(this System.Collections.Generic.IEnumerable<T> source, string fileName = null, string path = null)
+        {
+
+        }
         public static void ToXlxs<T>(this T @object) { }
         public static void ToXlxs<T>(this System.Collections.Generic.IEnumerable<T> source) { }
 

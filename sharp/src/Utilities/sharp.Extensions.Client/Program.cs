@@ -1,5 +1,6 @@
-﻿using sharp.Extensions.Mail.Gmail;
+﻿using sharp.Extensions.ExportFiles;
 using System;
+using System.Collections.Generic;
 
 namespace sharp.Extensions.Client
 {
@@ -8,12 +9,29 @@ namespace sharp.Extensions.Client
         [STAThread]
         private static void Main()
         {
-            string token = Common.Common.GenerateToken();
-            Console.WriteLine(token);
+            User.Init().ToCsv(); //.//Wait();
+        }
 
-            GmailSender sender = new GmailSender();
-            sender.SetBodyHtml(true).SetSubject("").SetBodyString("").SetCredentials("", "").Send();
-            Console.Read();
+        class User
+        {
+            public string Name { get; set; }
+            public int Age { get; set; }
+
+
+            public static List<User> Init()
+            {
+                var list = new List<User>()
+                {
+                    new User() { Age = 12, Name = "valodik"},
+                    new User() { Age = 12, Name = "valodik"},
+                    new User() { Age = 12, Name = "valodik"},
+                    new User() { Age = 12, Name = "valodik"},
+                    new User() { Age = 12, Name = "valodik"},
+                    new User() { Age = 12, Name = "valodik"},
+
+                };
+                return list;
+            }
         }
     }
 }
