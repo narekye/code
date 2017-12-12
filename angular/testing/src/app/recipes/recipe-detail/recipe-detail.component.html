@@ -1,11 +1,13 @@
 <div class="row">
-  <div class="col-xs-1">
-    <img src="" alt="" class="img-responsive">
+  <div class="col-xs-12">
+    <img [src]="recipe.imagePath" alt="recipe.name"
+    style="max-height: 300px"
+    class="img-responsive">
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Receipe name
+    {{recipe.name}}
   </div>
 </div>
 <div class="row">
@@ -31,7 +33,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Description
+    {{recipe.description}}
   </div>
 </div>
 <div class="row">
