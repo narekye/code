@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xs-12">
         <!--<button routerLink="new" class="btn btn-success">New Recipe</button>-->
-        <button (click)="onNewRecipe()" class="btn btn-success">New Recipe</button>
+        <button (click)="onNewRecipe()" class="btn btn-success" [disabled]="!authService.isAuthenticated()">New Recipe</button>
 
     </div>
 </div>

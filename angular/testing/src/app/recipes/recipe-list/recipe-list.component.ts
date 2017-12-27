@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
-import { RecipeService } from './../recipe.service';
-import { Recipe } from './../recipe.model';
-import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
-import { Subscription } from 'rxjs/Subscription';
+import {RecipeService} from './../recipe.service';
+import {Recipe} from './../recipe.model';
+import {OnDestroy} from '@angular/core/src/metadata/lifecycle_hooks';
+import {Subscription} from 'rxjs/Subscription';
+import {AuthService} from "../../auth/auth.service";
 
 @Component({
   selector: 'app-recipe-list',
@@ -16,7 +17,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   recipes: Recipe[];
 
   constructor(private recipeService: RecipeService, private router: Router,
-    private route: ActivatedRoute) {
+              private route: ActivatedRoute, private  authService: AuthService) {
   }
 
   ngOnInit() {
@@ -27,7 +28,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   }
 
   onNewRecipe() {
-    this.router.navigate(['new'], { relativeTo: this.route });
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 
   ngOnDestroy() {

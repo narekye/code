@@ -8,18 +8,17 @@ import { ComponentMyComponent } from './component-my/component-my.component';
 import { LoginComponent } from './login/login.component';
 import { HttpProviderService } from './http-provider.service';
 import { LoginModel } from './models/loginMod';
+import { ComboBoxModule } from 'ng2-combobox';
 @NgModule({
   declarations: [
     AppComponent,
     ComponentMyComponent,
-    LoginComponent,
-    LoginModel
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    DataTablesModule,
     HttpClientModule,
-    CommonModule
+    ComboBoxModule
   ],
   providers: [HttpProviderService],
   bootstrap: [AppComponent]

@@ -12,6 +12,13 @@ export class LoginComponent implements OnInit {
   public username: string;
   public password: string;
 
+  types = [{
+    'name': "a",
+    "value": 1
+  }];
+
+  type: {};
+
   constructor() { }
 
   ngOnInit() {
@@ -23,6 +30,10 @@ export class LoginComponent implements OnInit {
     }
     var user = new LoginModel(this.username, this.password);
 
+  }
+
+  print() {
+    console.log(this.type);
   }
 
 }
