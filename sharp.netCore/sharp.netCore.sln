@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sharp.AspNet.WebApi", "ASP.NET\sharp.AspNet.WebApi\sharp.AspNet.WebApi.csproj", "{89FA9F39-1070-4B69-A5B6-F99A27871F67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP.NET", "ASP.NET", "{51A15550-EF3E-4C0C-8967-5C38448DE390}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Angular", "Angular", "{6808B166-5B75-40B0-B474-26C2B3F0A233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.Angular", "Angular\sharp.Angular\sharp.Angular.csproj", "{44BB3D66-B55E-4934-86E3-6E875B395259}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,17 @@ Global
 		{89FA9F39-1070-4B69-A5B6-F99A27871F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89FA9F39-1070-4B69-A5B6-F99A27871F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89FA9F39-1070-4B69-A5B6-F99A27871F67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44BB3D66-B55E-4934-86E3-6E875B395259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44BB3D66-B55E-4934-86E3-6E875B395259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44BB3D66-B55E-4934-86E3-6E875B395259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44BB3D66-B55E-4934-86E3-6E875B395259}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{89FA9F39-1070-4B69-A5B6-F99A27871F67} = {51A15550-EF3E-4C0C-8967-5C38448DE390}
+		{44BB3D66-B55E-4934-86E3-6E875B395259} = {6808B166-5B75-40B0-B474-26C2B3F0A233}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E494F809-3456-49B8-BD39-E08FA00126D4}
