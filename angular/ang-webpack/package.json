@@ -1,7 +1,7 @@
 {
   "name": "angular4-with-webpack",
   "version": "1.0.0",
-  "description": "An Angular Seed Project",
+  "description": "Please describe a description for your application.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
