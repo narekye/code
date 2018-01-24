@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from './../auth.service';
-import { each } from '@firebase/database/dist/esm/src/core/util/util';
 
 @Component({
   selector: 'app-signup',
