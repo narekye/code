@@ -7,4 +7,14 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
 
+    constructor() {
+        console.log(OperationKindEnum.ADD_PLAYER as number);
+    }
+
+
+}
+
+export enum OperationKindEnum {
+    ADD_PLAYER = 0,
+    REMOVE_PLAYER = 1
 }
