@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.ScreenCapturer.MailSender", "src\Utilities\sharp.ScreenCapturer\sharp.ScreenCapturer.MailSender\sharp.ScreenCapturer.MailSender.csproj", "{0BCF483E-D74C-433A-936A-A0469F23C329}"
 EndProject
@@ -50,8 +50,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.Serene.Web", "src\Serene\sharp.Serene\sharp.Serene.Web\sharp.Serene.Web.csproj", "{E298DC33-D240-4585-AC47-775575246780}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.Cache.Redis", "src\Cache\sharp.Cache.Redis\sharp.Cache.Redis.csproj", "{049DFBED-0CD1-444C-A2C2-4C65CF343F6C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharp.WebDav", "src\WebDAV\sharp.WebDav\sharp.WebDav.csproj", "{49C6F32A-1CB7-4FD7-BB06-68A10DDDC3DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -155,12 +153,11 @@ Global
 		{049DFBED-0CD1-444C-A2C2-4C65CF343F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{049DFBED-0CD1-444C-A2C2-4C65CF343F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{049DFBED-0CD1-444C-A2C2-4C65CF343F6C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{49C6F32A-1CB7-4FD7-BB06-68A10DDDC3DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49C6F32A-1CB7-4FD7-BB06-68A10DDDC3DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49C6F32A-1CB7-4FD7-BB06-68A10DDDC3DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49C6F32A-1CB7-4FD7-BB06-68A10DDDC3DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B15E72F7-6B93-4A5D-9999-FF5342608C1E}
 	EndGlobalSection
 EndGlobal
