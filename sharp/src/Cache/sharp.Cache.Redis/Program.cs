@@ -19,7 +19,7 @@ namespace sharp.Cache.Redis
         {
             var redis = RedisStore.RedisCache;
 
-            CustomCache.Cache.Set("aa", new object(), 60000);
+            // CustomCache.Cache.Set("aa", new object(), 60000);
 
             Console.Read();
         }

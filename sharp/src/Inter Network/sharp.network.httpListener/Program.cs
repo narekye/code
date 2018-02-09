@@ -26,6 +26,7 @@ namespace sharp.network.httpListener
             Console.Title = "AJAX http server";
 
             Dialog();
+            Start:
             var dialogOpen = new OpenFileDialog()
             {
                 Multiselect = false,
@@ -37,8 +38,15 @@ namespace sharp.network.httpListener
                 if (dialogOpen.ShowDialog() == DialogResult.OK)
                 {
                     var file = File.ReadAllText(dialogOpen.FileName);
-
-                    body = JsonConvert.DeserializeObject<object>(file);
+                    try
+                    {
+                        body = JsonConvert.DeserializeObject<object>(file);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                        goto Start;
+                    }
                     Console.WriteLine();
                 }
             }
@@ -48,13 +56,13 @@ namespace sharp.network.httpListener
             while (true)
             {
                 if (reqcount == 20) Console.Clear();
-                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.BackgroundColor = ConsoleColor.Red;
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write(reqcount + ": ");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.Gray;
                 HttpListenerContext context = listener.GetContextAsync().Result;
-                Console.Beep(5000, 300);
+                Console.Beep(4000, 300);
                 HttpListenerRequest request = context.Request;
                 switch (request.HttpMethod)
                 {
@@ -117,6 +125,20 @@ namespace sharp.network.httpListener
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Request has body.");
+                Stream body = c.InputStream;
+                Encoding enc = c.ContentEncoding;
+                StreamReader reader = new StreamReader(body, enc);
+
+                if(c.ContentType != null)
+                {
+                    Console.WriteLine("Client data content type -> {0}", c.ContentType);
+                }
+
+                Console.WriteLine("Start read client data....");
+                string s = reader.ReadToEnd();
+                Console.WriteLine(s);
+                body.Close();
+                reader.Close();
             }
             Console.ForegroundColor = ConsoleColor.Gray;
         }

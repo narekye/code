@@ -1,11 +1,12 @@
-﻿using sharp.Extensions.Checkings;
-using System;
+﻿using System;
 using System.Drawing;
 using ZXing;
 using ZXing.QrCode;
 
 namespace sharp.Extensions.QR
 {
+    using Extensions.Checkings;
+
     public class QrCode
     {
         public static void GenerateBarCode(string text, int width = 250, int height = 250)
