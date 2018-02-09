@@ -7,12 +7,12 @@ import {HomeComponent} from "./core/home/home.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule'},
+  {path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule'}, // lazy loading
   {path: 'shopping-list', component: ShoppingListComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes, {
-    preloadingStrategy: PreloadAllModules
+    preloadingStrategy: PreloadAllModules // pre loading all modules seperate from app.module
   })],
   exports: [RouterModule]
 })

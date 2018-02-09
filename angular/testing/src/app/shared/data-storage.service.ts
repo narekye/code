@@ -13,7 +13,6 @@ export class DataStorageService {
         private recipeService: RecipeService,
         private authService: AuthService) { }
 
-
     storeRecipes() {
         const token = this.authService.getToken();
         return this.http.put('https://recipe-book-66513.firebaseio.com/recipes.json?auth=' + token, this.recipeService.getRecipes());
@@ -25,10 +24,12 @@ export class DataStorageService {
         this.http.get('https://recipe-book-66513.firebaseio.com/recipes.json?auth=' + token)
             .map(
             (response: Response) => {
-                const recipes = response.json();
-                for (let recipe of recipes) {
-                    if (!recipe['ingredients']) {
-                        recipe['ingredients'] = [];
+                const recipes: Recipe[] = response.json() as Recipe[];
+                if (!recipes !== null) {
+                    for (const recipe of recipes) {
+                        if (!recipe['ingredients']) {
+                            recipe['ingredients'] = [];
+                        }
                     }
                 }
                 return recipes;

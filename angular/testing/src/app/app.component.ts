@@ -7,11 +7,7 @@ import * as fire from 'firebase';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  loadedFeature = '';
-  onNavigate(feature: string) {
-    this.loadedFeature = feature;
-  }
-
+  
   ngOnInit() {
     fire.initializeApp({
       apiKey: "AIzaSyB0Spl6zAgIjfCQPUzdtr8PnzufBm8bLg0",
