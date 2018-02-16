@@ -6,7 +6,7 @@ namespace sharp.Extensions.Checkings
     {
         public static void ThrowIfNull<T>(this T obj, Exception exception = null)
         {
-            if (obj == null) throw exception.IsNull() ? new NullReferenceException() : exception;
+            if (obj == null) throw exception ?? new NullReferenceException();
         }
 
         public static bool IsNull<T>(this T obj) where T : class
