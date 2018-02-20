@@ -1,19 +1,22 @@
 from stack_ex import Stack
 
 
-def par_checker(symbol_string):
+def par_checker_extended(symbol_string):
     s = Stack()
     balanced = True
     index = 0
     while index < len(symbol_string) and balanced:
         symbol = symbol_string[index]
-        if symbol == "(":
+        if symbol in "({[":
             s.push(symbol)
         else:
             if s.is_empty():
                 balanced = False
             else:
-                s.pop()
+                top = s.pop()
+                if not matches(top, symbol):
+                    balanced = False
+
         index = index + 1
 
         if balanced and s.is_empty():
@@ -21,4 +24,11 @@ def par_checker(symbol_string):
         else:
             return False
 
-print(par_checker("(())"))
+
+def matches(open, close):
+    opens = "([{"
+    closes = ")]}"
+    return opens.index(open) == closes.index(close)
+
+
+print(par_checker_extended("{{}}]"))
