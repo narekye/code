@@ -9,29 +9,10 @@ namespace sharp.Extensions.Client
         [STAThread]
         private static void Main()
         {
-            User.Init().ToCsv(); //.//Wait();
-        }
+            var s = System.IO.File.ReadAllLines("NewFolder/TextFile1.txt");
 
-        class User
-        {
-            public string Name { get; set; }
-            public int Age { get; set; }
-
-
-            public static List<User> Init()
-            {
-                var list = new List<User>()
-                {
-                    new User() { Age = 12, Name = "valodik"},
-                    new User() { Age = 12, Name = "valodik"},
-                    new User() { Age = 12, Name = "valodik"},
-                    new User() { Age = 12, Name = "valodik"},
-                    new User() { Age = 12, Name = "valodik"},
-                    new User() { Age = 12, Name = "valodik"},
-
-                };
-                return list;
-            }
+            byte b = 100;
+            b = unchecked((byte)(b + 200));
         }
     }
 }

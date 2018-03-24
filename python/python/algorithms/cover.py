@@ -11,7 +11,7 @@ import time
 def sum_of_n(n):
     start = time.time()
 
-    result = 0;
+    result = 0
     for i in range(1, n + 1):
         result += i
     end = time.time()
