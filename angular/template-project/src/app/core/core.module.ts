@@ -4,6 +4,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BasicAuthService } from './auth/basic-auth.service';
 
 @NgModule({
+    declarations: [],
     imports: [],
     providers: [
         BasicAuthService,
