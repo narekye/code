@@ -1,11 +1,14 @@
 import { HttpClient } from '@angular/common/http';
+import { Injectable, Inject } from '@angular/core';
+import { Constants } from './constants';
 
-export abstract class BaseRepository {
+@Injectable()
+export abstract class BaseService {
 
     private _baseUrl: string;
     private _httpClient: HttpClient;
 
-    constructor(baseUrl: string, httpClient: HttpClient) {
+    constructor(httpClient: HttpClient, baseUrl?: string) {
         this._baseUrl = baseUrl;
         this._httpClient = httpClient;
     }

@@ -1,17 +1,23 @@
 import { Constants } from './../shared/constants';
 import { NgModule } from '@angular/core';
 import { TokenInterceptor } from './token.interceptor';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BasicAuthService } from './auth/basic-auth.service';
+import { ForTestingService } from './../for-testing/for-testing.service';
+import { CommonModule } from '@angular/common';
 
 const production = false;
-const BASE_URL_DEV = "http://localhost:{port}/";
+const BASE_URL_DEV = "https://jsonplaceholder.typicode.com/posts/1";
 const PROD_BASE_URL = "http://base-URL.com/";
 
 @NgModule({
     declarations: [],
-    imports: [],
+    imports: [
+        CommonModule,
+        HttpClientModule
+    ],
     providers: [
+        ForTestingService,
         BasicAuthService,
         {
             provide: HTTP_INTERCEPTORS,
@@ -19,7 +25,7 @@ const PROD_BASE_URL = "http://base-URL.com/";
             multi: true,
             deps: [BasicAuthService]
         },
-        { provide: Constants.ApiKey, useValue: production ? BASE_URL_DEV : PROD_BASE_URL } // usage @Inject(Constants.ApiKey) url : string in ctor, like services, choose env mode {production}.
+        { provide: Constants.Api, useValue: production ? PROD_BASE_URL : BASE_URL_DEV } // usage @Inject(Constants.ApiKey) url : string in ctor, like services, choose env mode {production}.
     ]
 })
 

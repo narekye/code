@@ -10,9 +10,7 @@ import 'rxjs/Rx';
 })
 
 export class AppComponent {
-    constructor(private http: Http) {
-        // this.http.get('https://jsonplaceholder.typicode.com/posts/1').map((response: Response) => {
-        //     return "";
-        // }).subscribe((result: string) /* depends on the type of returning map function */ => { });
+    constructor() {
+        
     }
 }
