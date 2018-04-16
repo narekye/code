@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 export class BasicAuthService implements IAuthServiceBase {
     header: string = "Authentication";
-    getToken(): string {
+    public getToken(): string {
         return "";
     }
 }
