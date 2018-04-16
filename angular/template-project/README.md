@@ -1,1 +1,1 @@
-Webpack sample for angular 2.x 4.x from scratch with webpack.
+Webpack sample for angular 2.x 4.x from scratch with webpack and templates.
