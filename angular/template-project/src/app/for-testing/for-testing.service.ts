@@ -5,7 +5,7 @@ import { Constants } from "../shared/constants";
 
 @Injectable()
 export class ForTestingService extends BaseService {
-    constructor(httpClient: HttpClient, @Inject(Constants.Api) baseUrl : string) {
+    constructor(httpClient: HttpClient, @Inject(Constants.API_ENDPOINT) baseUrl : string) {
         super(httpClient, baseUrl);
     }
 

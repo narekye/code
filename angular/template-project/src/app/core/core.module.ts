@@ -7,7 +7,7 @@ import { ForTestingService } from './../for-testing/for-testing.service';
 import { CommonModule } from '@angular/common';
 
 const production = false;
-const BASE_URL_DEV = "https://jsonplaceholder.typicode.com/posts/1";
+const DEV_BASE_URL = "https://jsonplaceholder.typicode.com/posts/1";
 const PROD_BASE_URL = "http://base-URL.com/";
 
 @NgModule({
@@ -25,7 +25,8 @@ const PROD_BASE_URL = "http://base-URL.com/";
             multi: true,
             deps: [BasicAuthService]
         },
-        { provide: Constants.Api, useValue: production ? PROD_BASE_URL : BASE_URL_DEV } // usage @Inject(Constants.ApiKey) url : string in ctor, like services, choose env mode {production}.
+        { provide: Constants.API_ENDPOINT, useValue: production ? PROD_BASE_URL : DEV_BASE_URL }
+         // usage @Inject(Constants.ApiKey) url : string in ctor, like services, choose env mode {production}.
     ]
 })
 
