@@ -1,4 +1,7 @@
-export interface IAuthServiceBase {
-    header : string;
-    getToken(): string;
+export class IAuthServiceBase {
+    header: string;
+
+    getToken(): string {
+        return null;
+    }
 }

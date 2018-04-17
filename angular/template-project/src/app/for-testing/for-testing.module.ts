@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { ForTestingComponent } from './for-testing.component';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {ForTestingComponent} from './for-testing.component';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
     declarations: [ForTestingComponent],

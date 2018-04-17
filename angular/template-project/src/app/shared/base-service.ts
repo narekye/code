@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable, Inject } from '@angular/core';
-import { Constants } from './constants';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 
 @Injectable()
-export abstract class BaseService {
+export class BaseService {
 
     private _baseUrl: string;
     private _httpClient: HttpClient;
@@ -13,11 +12,11 @@ export abstract class BaseService {
         this._httpClient = httpClient;
     }
 
-    get BaseUrl():string {
+    get BaseUrl(): string {
         return this._baseUrl;
     }
 
-    get HttpClient():HttpClient {
+    get HttpClient(): HttpClient {
         return this._httpClient;
     }
 }

@@ -1,14 +1,29 @@
-import { HttpStatusCode } from './../shared/enums';
-import { IAuthServiceBase } from './../core/auth/base-auth.service';
-import { HttpInterceptor, HttpHandler, HttpRequest, HttpSentEvent, HttpHeaderResponse, HttpProgressEvent, HttpResponse, HttpUserEvent, HttpHeaders, HttpEvent, HttpErrorResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import {HttpStatusCode} from '../shared/enums';
+import {IAuthServiceBase} from './auth/base-auth.service';
+
+import {
+    HttpInterceptor,
+    HttpHandler,
+    HttpRequest,
+    HttpSentEvent,
+    HttpHeaderResponse,
+    HttpProgressEvent,
+    HttpResponse,
+    HttpUserEvent,
+    HttpEvent,
+    HttpErrorResponse
+} from '@angular/common/http';
+
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-    constructor(private auth: IAuthServiceBase) { }
+    constructor(private auth: IAuthServiceBase) {
+
+    }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpSentEvent | HttpHeaderResponse | HttpProgressEvent | HttpResponse<any> | HttpUserEvent<any>> {
         req = req.clone({

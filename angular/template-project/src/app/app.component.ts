@@ -1,7 +1,4 @@
-import { HttpModule, Http } from '@angular/http';
-import { Component } from "@angular/core";
-import { Response } from '@angular/http';
-import 'rxjs/Rx';
+import {Component} from "@angular/core";
 
 @Component({
     selector: 'app-root',
@@ -10,7 +7,5 @@ import 'rxjs/Rx';
 })
 
 export class AppComponent {
-    constructor() {
-        
-    }
+
 }
