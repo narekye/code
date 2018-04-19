@@ -11,6 +11,7 @@ export class ForTestingService extends BaseService {
 
     public testGet() {
         this.HttpClient.get<any>(this.BaseUrl).subscribe((response: any) => {
+            console.log(response);
         });
     }
 

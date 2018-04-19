@@ -11,7 +11,7 @@ import {
     HttpResponse,
     HttpUserEvent,
     HttpEvent,
-    HttpErrorResponse
+    HttpErrorResponse, HttpEventType
 } from '@angular/common/http';
 
 import {Injectable} from '@angular/core';
@@ -32,12 +32,13 @@ export class TokenInterceptor implements HttpInterceptor {
             }
         });
 
-        return next.handle(req).do((error: HttpEvent<any>) => {
+        return next.handle(req).do((event: HttpEvent<any>) => {
+
+        }, (error: any) => {
             if (error instanceof HttpErrorResponse) {
-                if (error.status == HttpStatusCode.UnAuthorized as number) {
-                    // meanwhile u can cast it to base model
-                    // after that display an modal or error
-                    // redirect to login or registation page
+                let err = error as HttpErrorResponse;
+                if (err.status == HttpStatusCode.UnAuthorized) {
+                    alert("Pls login");
                 }
             }
         });
