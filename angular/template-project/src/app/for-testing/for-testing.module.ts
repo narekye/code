@@ -7,7 +7,7 @@ import {CommonModule} from '@angular/common';
     imports: [
         CommonModule
     ],
-    exports: [ForTestingComponent] // if component needs to be used in app component, just addd export component node.
+    exports: [ForTestingComponent] // if component needs to be used in outside of module where defined, just add export component node.
 })
 
 export class ForTestingModule {
