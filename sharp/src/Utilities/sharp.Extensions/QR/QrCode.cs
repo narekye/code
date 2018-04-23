@@ -27,7 +27,7 @@ namespace sharp.Extensions.QR
                 Options = options
             };
 
-
+            Console.WriteLine();
 
             var result = new Bitmap(writer.Write(text));
             string date = System.DateTime.Now.ToShortDateString();
