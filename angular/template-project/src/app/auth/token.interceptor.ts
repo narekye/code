@@ -1,5 +1,5 @@
 import {HttpStatusCode} from '../shared/enums';
-import {IAuthServiceBase} from './auth/base-auth.service';
+import { IAuthServiceBase } from './services/base-auth.service';
 
 import {
     HttpInterceptor,
@@ -18,6 +18,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 
+
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
@@ -28,7 +29,7 @@ export class TokenInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpSentEvent | HttpHeaderResponse | HttpProgressEvent | HttpResponse<any> | HttpUserEvent<any>> {
         req = req.clone({
             setHeaders: {
-                [this.auth.header]: this.auth.getToken()
+                [this.auth.header]: this.auth.getTokenOrDefault()
             }
         });
 

@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"SignUpComponent":{"__symbolic":"class","decorators":[{"__symbolic":"call","expression":{"__symbolic":"reference","module":"@angular/core","name":"Component","line":1,"character":1},"arguments":[{"selector":"sign-up","templateUrl":"./sign-up.component.html","styleUrls":["./sign-up.component.css"]}]}]}}}]

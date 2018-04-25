@@ -1,5 +1,7 @@
-import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
+import { API_ENDPOINT } from './constants';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, Inject } from '@angular/core';
+
 
 @Injectable()
 export class BaseService {
@@ -7,13 +9,15 @@ export class BaseService {
     private _baseUrl: string;
     private _httpClient: HttpClient;
 
-    constructor(httpClient: HttpClient, baseUrl?: string) {
-        this._baseUrl = baseUrl;
+    constructor(httpClient: HttpClient) {
         this._httpClient = httpClient;
     }
 
     get BaseUrl(): string {
         return this._baseUrl;
+    }
+    set BaseUrl(value: string) {
+        this._baseUrl = value;
     }
 
     get HttpClient(): HttpClient {
