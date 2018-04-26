@@ -5,7 +5,6 @@ import { ForTestingComponent } from "./for-testing/for-testing.component";
 
 
 const appRoutes: Routes = [
-    {path: '', component: AppComponent}
 ];
 
 @NgModule({
