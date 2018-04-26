@@ -5,6 +5,7 @@ import { ForTestingComponent } from "./for-testing/for-testing.component";
 
 
 const appRoutes: Routes = [
+    // {path: '', redirectTo: 'signin', pathMatch: 'full'}
 ];
 
 @NgModule({

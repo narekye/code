@@ -6,6 +6,7 @@ import {CommonModule} from '@angular/common';
 
 @NgModule({
     declarations: [ForTestingComponent],
+    imports: [HttpClientModule],
     exports: [ForTestingComponent],
     providers: [ForTestingService]
      // if component needs to be used in outside of module where defined, just add export component node.

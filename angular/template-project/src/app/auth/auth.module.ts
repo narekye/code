@@ -9,9 +9,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
 import { AuthRoutingModule } from './auth-routing.module';
 
-const production = false;
+const production = true;
 const DEV_BASE_URL = "https://jsonplaceholder.typicode.com/posts/1";
-const PROD_BASE_URL = "http://www.google.com/";
+const PROD_BASE_URL = "https://jsonplaceholder.typicode.com/posts";
 
 @NgModule({
     declarations: [
