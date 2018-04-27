@@ -14,7 +14,11 @@ export class AppComponent {
 
     }
 
-    click() {
+    signIn() {
         this.route.navigate(['signin'], { relativeTo: this.activeRoute })
+    }
+
+    signUp() {
+        this.route.navigate(['signup'], { relativeTo: this.activeRoute });
     }
 }
