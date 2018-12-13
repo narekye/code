@@ -1,43 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace sharp.ISTC.Sample6
 {
 
-    class Parent
+    class ClassA
     {
-        static Parent()
+        static ClassA()
         {
             Console.WriteLine("Parent static ctor called");
         }
 
-        public Parent()
+        public ClassA()
         {
             Console.WriteLine("Parent ctor called");
         }
     }
 
-    class Child : Parent
+    class ClassB : ClassA
     {
-        //public int Child { get; set; }
-
-            public int this[int a, int b]
-        {
-            get {
-                int[] arr = new int[10];
-
-                return 0; }
-        }
-
-        static Child()
+        static ClassB()
         {
             Console.WriteLine("Child static ctor called");
         }
 
-        public Child()
+        public ClassB()
         {
             Console.WriteLine("Child ctor called");
         }
@@ -47,7 +33,7 @@ namespace sharp.ISTC.Sample6
     {
         static void Main(string[] args)
         {
-            var child = new Child();
+            var child = new ClassB();
             Console.ReadKey();
 
             int value = 2;

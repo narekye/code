@@ -6,27 +6,34 @@ using System.Threading.Tasks;
 
 namespace sharp.ISTC.Sample7
 {
-    public abstract class A
+    public abstract class BaseClass
     {
-        public virtual string Print() { return "A"; }
+        public virtual string BaseMethod() { return $"{nameof(BaseClass)} |  {nameof(BaseMethod)}"; }
     }
 
-    public class B : A
+    public abstract class DerivedClass : BaseClass
     {
-        public virtual new string Print() { return "B"; }
+        public virtual string BaseMethod() // does it makes sense when virtual keyowrd will be replaced with override
+        {
+            return $"{nameof(DerivedClass)} | {nameof(BaseMethod)}";
+        }
     }
 
-    public class C : B
+    public class Sample1 : DerivedClass
     {
-        public override string Print() { return "C"; }
+        public new void BaseMethod()
+        {
+            Console.WriteLine("sample 1");
+        }
     }
-
+    
     class Program
     {
         static void Main(string[] args)
         {
-            A a = new C();
-            Console.WriteLine(a.Print());
+            BaseClass b = new Sample1();
+
+            Console.WriteLine(b.BaseMethod());
 
             Console.Read();
         }
