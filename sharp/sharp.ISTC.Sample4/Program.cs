@@ -24,7 +24,10 @@ namespace sharp.ISTC.Sample4
 
     class C : B
     {
-
+        public override void DoWork()
+        {
+            Console.WriteLine($"{nameof(C)} does work!");
+        }
     }
 
     class Program
